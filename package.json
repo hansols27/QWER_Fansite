@@ -1,0 +1,21 @@
+{
+  "dependencies": {
+    "lts": "^2.0.0",
+    "react-router-dom": "^7.7.0"
+  },
+  "devDependencies": {
+    "@types/react": "^19.1.8",
+    "@types/react-dom": "^19.1.6",
+    "@types/react-router-dom": "^5.3.3",
+    "@vitejs/plugin-react": "^4.6.0",
+    "@vitejs/plugin-react-swc": "^3.10.2",
+    "typescript": "^5.8.3",
+    "vite": "^7.0.5",
+    "vite-plugin-svgr": "^4.3.0"
+  },
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  }
+}

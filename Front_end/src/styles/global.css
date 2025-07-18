@@ -1,22 +1,15 @@
 /* global.css - 전역 스타일 및 변수 */
 :root {
-  --primary-color: #007BFF;
-  --secondary-color: #6c757d;
-  --font-family-base: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  --primary-color: #4f46e5;
 }
 
-body {
-  font-family: var(--font-family-base);
-  background-color: #fafafa;
-  color: #212529;
+h1,
+h2,
+h3 {
+  font-weight: bold;
 }
 
 a {
+  text-decoration: none;
   color: var(--primary-color);
-}
-
-.container {
-  width: 90%;
-  max-width: 1140px;
-  margin: 0 auto;
 }
