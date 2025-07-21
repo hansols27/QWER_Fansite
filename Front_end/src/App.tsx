@@ -1,19 +1,24 @@
-import React from 'react';
+import { useState } from 'react';
 import logo from './assets/images/logo.svg';
 import menu from './assets/icons/menu.png';
-import close from './assets/icons/btn_siteMenu_close.png';
+import close from './assets/icons/close.png';
+import './styles/SideNav.css';
+import TopBanner from './components/TopBanner';
+import SideNav from './components/SideNav';
 
-function openNav() {
-  console.log('네비 열림');
-}
+function App() {
+  const [isOpen, setIsOpen] = useState(false);
 
-function closeNav() {
-  console.log('네비 닫힘');
-}
+  const openNav = () => {
+    setIsOpen(true);
+  };
 
-const App: React.FC = () => {
+  const closeNav = () => {
+    setIsOpen(false);
+  };
+
   return (
-    <>
+    <div id="wrap" className={isOpen ? 'gnb_on' : ''}>
       <header>
         <div id="header" className="main_hd">
           <div className="logo">
@@ -22,40 +27,59 @@ const App: React.FC = () => {
             </a>
           </div>
           <div className="menu">
-            <button className="ham_menu" onClick={openNav} type="button"></button>
+            <button
+              className="ham_menu"
+              onClick={openNav}
+              type="button"
+            ></button>
             <img src={menu} alt="메뉴 아이콘" />
           </div>
         </div>
-        <nav id="mySidenav" className="gnb">          
+
+        <nav
+          id="mySidenav"
+          className="gnb"
+          style={{ height: isOpen ? '100%' : '0' }}
+        >
           <div className="ArtistLogo_txt">
-           <a href="/">
-            <img src={logo} alt="로고" />
+            <a href="/">
+              <img src={logo} alt="로고" />
             </a>
           </div>
-          <button className="ham_menu_close" onClick={closeNav} type="button"></button>
+          <button
+            className="ham_menu_close"
+            onClick={closeNav}
+            type="button"
+          ></button>
           <img src={close} alt="닫기" />
+
           <ul className="gnb_list">
-                <li>
-                    <a href="/Default/Profile">PROFILE</a>
-                </li>
-                <li>
-                    <a href="/Default/DiscographyList">DISCOGRAPHY</a>
-                </li>
-                <li>
-                    <a href="/Default/Gallery">GALLERY</a>
-                </li>
-                <li>
-                    <a href="/Default/Video">VIDEO</a>
-                </li>
-                <li>
-                    <a href="/Default/NoticeList">NOTICE</a>
-                </li>
-                <li>
-                    <a href="/Default/Schedule">SCHEDULE</a>
-                </li>
-            </ul>          
+            <li>
+              <a href="/Default/Profile">PROFILE</a>
+            </li>
+            <li>
+              <a href="/Default/DiscographyList">DISCOGRAPHY</a>
+            </li>
+            <li>
+              <a href="/Default/Gallery">GALLERY</a>
+            </li>
+            <li>
+              <a href="/Default/Video">VIDEO</a>
+            </li>
+            <li>
+              <a href="/Default/NoticeList">NOTICE</a>
+            </li>
+            <li>
+              <a href="/Default/Schedule">SCHEDULE</a>
+            </li>
+          </ul>
         </nav>
       </header>
+
+      <SideNav />
+      <TopBanner />
+
+      <main style={{ height: '2000px' }}>스크롤 테스트용 더미 페이지</main>
 
       {/* Hero Slider */}
       <section className="slider" id="home">
@@ -172,8 +196,8 @@ const App: React.FC = () => {
       </section>
 
       <footer>&copy; 2025 QWER 팬사이트. 무단 복제 및 배포 금지.</footer>
-    </>
+    </div>
   );
-};
+}
 
 export default App;
