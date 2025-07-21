@@ -1,10 +1,26 @@
 import React from 'react';
+import logo from './assets/images/logo.svg';
+import menu from './assets/icons/menu.png';
+
+function openNav() {
+  console.log('네비 열림');
+}
 
 const App: React.FC = () => {
   return (
     <>
       <header>
-        <div className="logo">QWER 팬사이트</div>
+        <div id="header" className="main_hd">
+          <div className="logo">
+            <a href="#home">
+              <img src={logo} alt="로고" />
+            </a>
+          </div>
+          <div className="menu">
+            <button className="ham_menu" onClick={openNav} type="button"></button>
+            <img src={menu} alt="메뉴 아이콘" />
+          </div>
+        </div>
         <nav>
           <ul>
             <li>
