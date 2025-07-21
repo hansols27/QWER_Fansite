@@ -1,9 +1,14 @@
 import React from 'react';
 import logo from './assets/images/logo.svg';
 import menu from './assets/icons/menu.png';
+import close from './assets/icons/btn_siteMenu_close.png';
 
 function openNav() {
   console.log('네비 열림');
+}
+
+function closeNav() {
+  console.log('네비 닫힘');
 }
 
 const App: React.FC = () => {
@@ -21,27 +26,34 @@ const App: React.FC = () => {
             <img src={menu} alt="메뉴 아이콘" />
           </div>
         </div>
-        <nav>
-          <ul>
-            <li>
-              <a href="#home">홈</a>
-            </li>
-            <li>
-              <a href="#photos">사진</a>
-            </li>
-            <li>
-              <a href="#videos">영상</a>
-            </li>
-            <li>
-              <a href="#community">커뮤니티</a>
-            </li>
-            <li>
-              <a href="#schedule">스케줄</a>
-            </li>
-            <li>
-              <a href="#project">프로젝트</a>
-            </li>
-          </ul>
+        <nav id="mySidenav" className="gnb">          
+          <div className="ArtistLogo_txt">
+           <a href="/">
+            <img src={logo} alt="로고" />
+            </a>
+          </div>
+          <button className="ham_menu_close" onClick={closeNav} type="button"></button>
+          <img src={close} alt="닫기" />
+          <ul className="gnb_list">
+                <li>
+                    <a href="/Default/Profile">PROFILE</a>
+                </li>
+                <li>
+                    <a href="/Default/DiscographyList">DISCOGRAPHY</a>
+                </li>
+                <li>
+                    <a href="/Default/Gallery">GALLERY</a>
+                </li>
+                <li>
+                    <a href="/Default/Video">VIDEO</a>
+                </li>
+                <li>
+                    <a href="/Default/NoticeList">NOTICE</a>
+                </li>
+                <li>
+                    <a href="/Default/Schedule">SCHEDULE</a>
+                </li>
+            </ul>          
         </nav>
       </header>
 
