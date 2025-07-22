@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import logo from '@/assets/images/logo.svg';
 import menu from '@/assets/icons/menu.png';
 
@@ -7,7 +8,9 @@ const Header: React.FC = () => {
     <header className="main_hd">
       <div className="logo">
         {/* 로고 이미지 */}
-        <img src={logo} alt="Logo" />
+        <Link to="/">
+          <img src={logo} alt="Logo" />
+        </Link>
       </div>
       <nav className="menu">
         {/* 메뉴 아이콘 */}
