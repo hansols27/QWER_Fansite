@@ -1,41 +1,18 @@
-import { useState } from 'react';
-import { openNav, closeNav, initCommon } from "./utils/common";
-import TopBanner from './components/layout/TopBanner';
-import SideNav from './components/layout/SideNav';
-import { ModalVideo } from './components/common/ModalVideo';
+import React from 'react';
+import Header from './components/layout/Header';
+import Footer from './components/layout/Footer';
 
-function App() {
-  const [isOpen, setIsOpen] = useState(false);
-   const [isVideoOpen, setIsVideoOpen] = useState(false);
-
-  const openNav = () => setIsOpen(true);
-  const closeNav = () => setIsOpen(false);
-
+const App: React.FC = () => {
   return (
-    <div id="wrap" className={isOpen ? 'gnb_on' : ''}>
-      <header>
-        {/* 헤더 내용 (로고, 메뉴 버튼 등) */}
-        <button onClick={openNav}>메뉴 열기</button>
-      </header>
-
-      <SideNav isOpen={isOpen} onClose={closeNav} />
-      <TopBanner />
-
-    <main style={{ height: '2000px' }}>
-        스크롤 테스트용 더미 페이지
-        <div className="mt-10">
-          <button onClick={() => setIsVideoOpen(true)}>영상 모달 열기</button> 
-        </div>
+    <>
+      <Header />
+      
+      <main>
+        
       </main>
-
-      <ModalVideo
-        isOpen={isVideoOpen}
-        onClose={() => setIsVideoOpen(false)}
-        videoId="dQw4w9WgXcQ"
-        channel="youtube"
-      />
-    </div>
+      <Footer />
+    </>
   );
-}
+};
 
 export default App;

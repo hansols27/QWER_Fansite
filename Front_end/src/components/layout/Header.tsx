@@ -1,22 +1,20 @@
-import { Link } from 'react-router-dom';
+import React from 'react';
+import logo from '@/assets/images/logo.svg';
+import menu from '@/assets/icons/menu.png';
 
-export const Header = () => (
-  <header style={{ padding: '20px', borderBottom: '1px solid #ddd' }}>
-    <nav style={{ display: 'flex', gap: '1rem' }}>
-      <Link to="/">HOME</Link>
-    </nav>
-  </header>
-);
-/*export const Header = () => (
-  <header style={{ padding: '20px', borderBottom: '1px solid #ddd' }}>
-    <nav style={{ display: 'flex', gap: '1rem' }}>
-      <Link to="/">HOME</Link>
-      <Link to="/profile">PROFILE</Link>
-      <Link to="/music">MUSIC</Link>
-      <Link to="/schedule">SCHEDULE</Link>
-      <Link to="/news">NEWS</Link>
-      <Link to="/video">VIDEO</Link>
-      <Link to="/sns">SNS</Link>
-    </nav>
-  </header>
-);*/
+const Header: React.FC = () => {
+  return (
+    <header className="main_hd">
+      <div className="logo">
+        {/* 로고 이미지 */}
+        <img src={logo} alt="Logo" />
+      </div>
+      <nav className="menu">
+        {/* 메뉴 아이콘 */}
+        <img src={menu} alt="Menu" />
+      </nav>
+    </header>
+  );
+};
+
+export default Header;

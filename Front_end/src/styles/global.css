@@ -21,9 +21,8 @@ body, button, input, select, textarea {
     font-weight: 400;
     line-height: normal;
     color: #0c0c0c;
-    background-color: #fff;
+    background-color: #0E1726;
     font-family: "Spoqa Han Sans", sans-serif;
-    /*font-family: "Montserrat","Noto Sans","Spoqa Han Sans";*/
 }
 
     textarea:focus {
@@ -131,7 +130,7 @@ a {
     width: 100%;
     height: 120px;
     z-index: 999;
-    background-color: #fff;
+    background-color: #121212;
 }
 
 
@@ -143,8 +142,8 @@ a {
 
     #header.active {
         z-index: 99;
-        border-bottom: 1px solid #e2e2e2 !important;
-        background-color: #fff;
+        border-bottom: 1px solid #121212 !important;
+        background-color: #121212;
     }
 
     #header.profile_hd {
@@ -203,7 +202,7 @@ a {
     }
 
 /* header menu */
-.ham_menu {
+.menu {
     position: absolute;
     top: 60px;
     right: 3%;
@@ -214,12 +213,12 @@ a {
     height: 30px;
 }
 
-    .ham_menu img, .ham_menu_close img {
+    .menu img, .menu_close img {
         width: 100%;
         z-index: 1111111111;
     }
 
-.ham_menu_close {
+.menu_close {
     position: absolute;
     top: 60px;
     right: 3%;
@@ -237,13 +236,13 @@ body.active #header {
     border-bottom: 0 !important;
 }
 
-body.active .ham_menu {
+body.active .menu {
     width: 30px;
     height: 30px;
     background-size: contain;
 }
 
-body.active .ham_menu_sub {
+body.active .menu_sub {
     width: 30px;
     height: 30px;
     background-size: contain;
@@ -569,17 +568,26 @@ body.active {
     text-align: right;
     right: 3%;
     font-family: 'Montserrat';
-    font-size: 10px;
+    font-size: 16px;
     font-weight: 700;
-    color: #000;
+    color: #fff;
 }
 
     .copyright.wh {
         color: #fff;
     }
 
-    .copyright span {
-        color: #009be6;
+    .q {
+        color: #fff; 
+    }
+    .w {
+        color: #FF4EDB;
+    }
+    .e {
+        color: #00A8FF;
+    }
+    .r {
+        color: #00C853;
     }
 
 .policy_privacy {
@@ -678,10 +686,6 @@ body.active {
     .main_notice .main_n_stt {
         font-size: 9pt;
     }
-
-    /* .main_album .main_title_name {
-        max-height: 55px;
-    } */
 
     .main_album .main_title_name a {
         font-size: 23pt;
