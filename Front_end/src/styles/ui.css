@@ -360,11 +360,15 @@
         position: relative;
     }
 
-        .dis_right .lang li {
-            display: inline-block;
-            float: right;
-            margin: 0 5px;
+        .dis_right .lang {
+            display: flex;
+            justify-content: flex-end;
+            gap: 10px;
             font-weight: 600;
+        }
+
+        .dis_right .lang li {
+            list-style: none;
         }
 
             .dis_right .lang li:last-child {

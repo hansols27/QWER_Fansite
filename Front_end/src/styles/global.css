@@ -183,31 +183,24 @@ a {
 }
 
 /* artist logo */
-.ArtistLogo_txt {
+.logo {
     position: absolute;
     top: 53px;
     left: 3%;
     z-index: 1;
-    height: 43px;
+    height: 40px;
 }
 
-    .ArtistLogo_txt a {
+    .logo a {
         font-family: 'Montserrat';
         font-weight: 300;
         color: #000;
         font-size: 17pt;
     }
 
-    .ArtistLogo_txt img {
+    .logo img {
         height: 100% !important;
     }
-
-    .ArtistLogo_txt.main_logo a {
-        color: #fff;
-    }
-
-
-
 
 /* header menu */
 .ham_menu {
@@ -217,8 +210,8 @@ a {
     z-index: 1111111111;
     display: inline-block;
     white-space: nowrap;
-    width: 28px;
-    height: 28px;
+    width: 30px;
+    height: 30px;
 }
 
     .ham_menu img, .ham_menu_close img {
@@ -233,8 +226,8 @@ a {
     z-index: 1111111111;
     display: inline-block;
     white-space: nowrap;
-    width: 22px;
-    height: 22px;
+    width: 30px;
+    height: 30px;
 }
 
 
@@ -350,16 +343,18 @@ body.active {
     text-align: right;
 }
 
-    .main_album .main_album_name {
-        width: 100%;
-        overflow: hidden;
-        cursor: default !important;
-        display: -webkit-box;
-        white-space: normal;
-        word-wrap: break-word;
-        -webkit-line-clamp: 2;
-        -webkit-box-orient: vertical;
-    }
+.main_album .main_album_name {
+    width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    cursor: default !important;
+    display: -webkit-box;
+    white-space: normal;
+    word-wrap: break-word;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    line-clamp: 2; /* 표준 속성 추가 */
+}
 
         .main_album .main_album_name a {
             display: inline-block;
@@ -382,6 +377,7 @@ body.active {
         word-wrap: break-word;
         -webkit-line-clamp: 2;
         -webkit-box-orient: vertical;
+        line-clamp: 2; /* 표준 속성 추가 */
     }
 
         .main_album .main_title_name a {
@@ -431,6 +427,7 @@ body.active {
         word-wrap: break-word;
         -webkit-line-clamp: 2;
         -webkit-box-orient: vertical;
+        line-clamp: 2; /* 표준 속성 추가 */
         overflow: hidden;
     }
 
