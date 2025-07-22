@@ -1,7 +1,7 @@
 // src/components/layout/SideNav.tsx
 import React from 'react';
-import logo from './assets/images/logo.svg';
-import close from './assets/icons/close.png';
+import logo from '@/assets/images/logo.svg';
+import close from '@/assets/icons/close.png';
 
 interface SideNavProps {
   isOpen: boolean;

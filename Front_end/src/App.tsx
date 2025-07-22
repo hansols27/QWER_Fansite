@@ -1,10 +1,5 @@
 import { useState } from 'react';
 import { openNav, closeNav, initCommon } from "./utils/common";
-import './styles/global.css';
-import './styles/ui.css';
-import './styles/modal.css';
-import './styles/popup.css';
-import './styles/animate.css';
 import TopBanner from './components/layout/TopBanner';
 import SideNav from './components/layout/SideNav';
 import { ModalVideo } from './components/common/ModalVideo';

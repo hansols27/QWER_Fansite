@@ -1,5 +1,3 @@
-// src/util/common.ts
-
 export function openNav() {
   const sidenav = document.getElementById("mySidenav");
   const wrap = document.getElementById("wrap");
