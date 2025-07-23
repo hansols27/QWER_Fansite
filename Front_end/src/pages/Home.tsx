@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import Header from '@/components/layout/Header';
-import Footer from '@/components/layout/Footer';
+import SideNav from '@/components/layout/SideNav';
 import { socialLinks } from '@/constants/snsLinks';
 import { openInNewTab } from '@/utils/openInNewTab';
 import YouTubeEmbed from '@/components/common/YouTubeEmbed';
@@ -10,35 +10,40 @@ import { videoIds } from '@/data/videoIds';
 
 const Home = () => {
   const [selectedIndex, setSelectedIndex] = useState(0);
+  const [isSideNavOpen, setIsSideNavOpen] = useState(false);
+
+  const handleMenuOpen = () => setIsSideNavOpen(true);
+  const handleMenuClose = () => setIsSideNavOpen(false);
 
   return (
     <div id="wrap" className="main_wrap">
-      <Header />
+      {/* 헤더에 상태와 핸들러 전달 */}
+      <Header onMenuClick={handleMenuOpen} isSideNavOpen={isSideNavOpen} />
 
-      {/* SNS 메뉴: #wrap 바로 아래, fixed 위치 */}
+      <SideNav isOpen={isSideNavOpen} onClose={handleMenuClose} />
+
+      {/* SNS 메뉴 */}
       <aside className="sns-menu">
         <ul>
-          {socialLinks.map((social) => (
+          {socialLinks.map(({ id, icon, url, type }) => (
             <li
-              key={social.id}
-              className={social.type || ''}
-              onClick={() => openInNewTab(social.url)}
-              title={social.id}
+              key={id}
+              className={type || ''}
+              onClick={() => openInNewTab(url)}
+              title={id}
+              style={{ cursor: 'pointer' }}
             >
-              <img src={social.icon} alt={`${social.id} 아이콘`} width={32} height={32} />
+              <img src={icon} alt={`${id} 아이콘`} width={32} height={32} />
             </li>
           ))}
         </ul>
       </aside>
 
-      {/* 유튜브 영상과 썸네일 영역 */}
+      {/* 유튜브 영상 및 썸네일 */}
       <main id="youtube-section">
         <section className="youtube-container">
           <div className="youtube-main-video">
-            <YouTubeEmbed
-              videoId={videoIds[selectedIndex]}
-              width="100%"
-            />
+            <YouTubeEmbed videoId={videoIds[selectedIndex]} width="100%" />
           </div>
 
           <div className="youtube-thumbnails">
@@ -48,6 +53,7 @@ const Home = () => {
                   <div
                     className={`youtube-thumbnail ${idx === selectedIndex ? 'active' : ''}`}
                     onClick={() => setSelectedIndex(idx)}
+                    style={{ cursor: 'pointer' }}
                   >
                     <img
                       src={`https://img.youtube.com/vi/${id}/mqdefault.jpg`}

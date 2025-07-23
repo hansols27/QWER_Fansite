@@ -8,39 +8,27 @@ interface SideNavProps {
 }
 
 const SideNav: React.FC<SideNavProps> = ({ isOpen, onClose }) => {
+  if (!isOpen) return null;
+
   return (
-    <nav
-      id="side"
-      className="gnb"
-      style={{ height: isOpen ? '100%' : '0', transition: 'height 0.3s ease' }}
-    >
+    <nav className="gnb open">
+      <button className="menu_close" onClick={onClose} type="button">
+        <img src={close} alt="닫기" />
+      </button>
+
       <div className="logo">
         <a href="/">
           <img src={logo} alt="로고" />
         </a>
       </div>
-      <button className="ham_menu_close" onClick={onClose} type="button" />
-      <img src={close} alt="닫기" />
 
       <ul className="gnb_list">
-        <li>
-          <a href="/Default/Profile">PROFILE</a>
-        </li>
-        <li>
-          <a href="/Default/DiscographyList">DISCOGRAPHY</a>
-        </li>
-        <li>
-          <a href="/Default/Gallery">GALLERY</a>
-        </li>
-        <li>
-          <a href="/Default/Video">VIDEO</a>
-        </li>
-        <li>
-          <a href="/Default/NoticeList">NOTICE</a>
-        </li>
-        <li>
-          <a href="/Default/Schedule">SCHEDULE</a>
-        </li>
+        <li><a href="/Default/Profile">PROFILE</a></li>
+        <li><a href="/Default/DiscographyList">DISCOGRAPHY</a></li>
+        <li><a href="/Default/Gallery">GALLERY</a></li>
+        <li><a href="/Default/Video">VIDEO</a></li>
+        <li><a href="/Default/NoticeList">NOTICE</a></li>
+        <li><a href="/Default/Schedule">SCHEDULE</a></li>
       </ul>
     </nav>
   );

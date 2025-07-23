@@ -242,8 +242,7 @@ a:hover {
   height: 40px;
 }
 
-.menu img,
-.menu_close img {
+.menu img {
   width: 100%;
   z-index: 1111111111;
 }
@@ -252,11 +251,16 @@ a:hover {
   position: absolute;
   top: 60px;
   right: 3%;
-  z-index: 1111111111;
-  display: inline-block;
-  white-space: nowrap;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  z-index: 99999;
+}
+
+.menu_close img {
   width: 40px;
   height: 40px;
+  display: block;
 }
 
 /* Footer */
@@ -462,17 +466,21 @@ body.active .gnb {
 
 .gnb {
   position: fixed;
-  z-index: 1;
-  height: 0%;
-  width: 100%;
+  z-index: 88888; /* 중복 제거 및 수정 */
+  height: 0;
+  width: 100vw;
   top: 0;
   left: 0;
   background-color: #fff;
-  overflow-x: hidden;
-  transition: 0.5s;
-  z-index: 88888;
+  overflow: hidden; /* 기본 숨김 */
+  transition: height 0.5s ease;
   -ms-overflow-style: none; /* IE and Edge */
   scrollbar-width: none; /* Firefox */
+}
+
+.gnb.open {
+  height: 100vh !important;  /* 열릴 때 전체 화면 높이 */
+  overflow-y: auto;          /* 스크롤 가능 */
 }
 
 .gnb_list {
@@ -481,7 +489,6 @@ body.active .gnb {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  -webkit-transform: translate(-50%, -50%);
   transition: 0.3s margin-top ease-in-out;
 }
 
