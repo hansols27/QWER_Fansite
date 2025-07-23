@@ -10,7 +10,7 @@ interface SideNavProps {
 const SideNav: React.FC<SideNavProps> = ({ isOpen, onClose }) => {
   return (
     <nav
-      id="mySidenav"
+      id="side"
       className="gnb"
       style={{ height: isOpen ? '100%' : '0', transition: 'height 0.3s ease' }}
     >
