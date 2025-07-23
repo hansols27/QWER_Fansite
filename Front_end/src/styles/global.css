@@ -133,25 +133,6 @@ a:hover {
   height: auto;
 }
 
-/* Wrap */
-
-#wrap {
-  position: relative;
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
-  width: 100%;
-  height: auto;
-  min-width: 1200px;
-  min-height: 100vh;
-  -ms-overflow-style: none; /* IE and Edge */
-  scrollbar-width: none; /* Firefox */
-}
-
-/* main wrap height */
-#wrap.main_wrap {
-  height: 768px;
-}
-
 /* Skip */
 #skipMenu {
   overflow: hidden;
@@ -165,6 +146,41 @@ a:hover {
   white-space: nowrap;
   line-height: 0;
 }
+
+/* lang */
+.en {
+  font-family: 'Montserrat';
+}
+
+.ko {
+  font-family: 'Spoqa Han Sans', sans-serif;
+}
+
+/* Wrap */
+#wrap {
+  min-width: 1920px;
+  margin: 0 auto;
+  position: relative;
+  box-sizing: border-box;
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+/* main wrap height */
+#wrap.main_wrap {
+  height: 1080px;
+}
+/* main 영역 스타일 추가 */
+#main-content {
+  display: flex;
+  flex-direction: row;
+  max-width: 1920px;
+  margin: 140px auto 60px; /* 헤더 높이 120 + 여유 20 / 푸터 높이 60만큼 아래여백 */
+  min-height: calc(100vh - 120px - 60px);
+  gap: 40px;
+  box-sizing: border-box;
+}
+
 /* Header */
 #header {
   position: fixed;
@@ -194,34 +210,10 @@ a:hover {
 #header.main_hd {
   background: none !important;
 }
-
-/* lang */
-.en {
-  font-family: 'Montserrat';
-}
-
-.ko {
-  font-family: 'Spoqa Han Sans', sans-serif;
-}
-
-/* artist point color */
-.artist_color {
-  color: #fb469b;
-}
-
-.artist_crbg {
-  background-color: #fb469b;
-}
-
-/*menu mouse over color*/
-.gnb_list li a:hover {
-  letter-spacing: 0.1em;
-}
-
 /* artist logo */
 .logo {
   position: absolute;
-  top: 53px;
+  top: 60px;
   left: 3%;
   z-index: 1;
   height: 40px;
@@ -246,8 +238,8 @@ a:hover {
   z-index: 1111111111;
   display: inline-block;
   white-space: nowrap;
-  width: 30px;
-  height: 30px;
+  width: 40px;
+  height: 40px;
 }
 
 .menu img,
@@ -263,8 +255,178 @@ a:hover {
   z-index: 1111111111;
   display: inline-block;
   white-space: nowrap;
-  width: 30px;
-  height: 30px;
+  width: 40px;
+  height: 40px;
+}
+
+/* Footer */
+#footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  min-width: 1200px;
+  z-index: 111;
+}
+
+#footer:after {
+  display: block;
+  clear: both;
+  content: '';
+}
+
+.copyright {
+  position: absolute;
+  width: 100%;
+  bottom: 40px;
+  text-align: right;
+  right: 3%;
+  font-family: 'Montserrat';
+  font-size: 16px;
+  font-weight: 700;
+  color: #fff;
+}
+
+.copyright.wh {
+  color: #fff;
+}
+
+.q {
+  color: #fff;
+}
+.w {
+  color: #ff4edb;
+}
+.e {
+  color: #00a8ff;
+}
+.r {
+  color: #00c853;
+}
+
+.sns-menu {
+  position: fixed;
+  bottom: 15px; 
+  left: 3%;
+  z-index: 9999; 
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.sns-menu li {
+  width: 25px;
+  height: 25px;
+  cursor: pointer;
+  transition: margin-left 0.5s ease;
+  margin-bottom: 25px;
+}
+
+.sns-menu li:hover {
+  margin-left: 5px;
+}
+
+.sns-menu li img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.sns li.tp1,
+.sns_menu li.tp1 {
+  width: 25px;
+  height: 25px;
+  vertical-align: bottom;
+}
+
+/* Center Youtube Content */
+#youtube-section {
+  position: relative;
+  width: 100%;
+  max-width: 1600px;
+  margin: 0 auto;
+  padding-top: 140px; /* header 공간 확보 */
+  padding-bottom: 100px; /* footer 공간 확보 */
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Main video */
+.youtube-main-video {
+  width: 100%;
+  max-width: 1280px;
+  aspect-ratio: 16 / 9;
+  background-color: #000;
+  position: relative;
+  overflow: hidden;
+}
+
+.youtube-main-video iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+/* Thumbnail swiper */
+.youtube-thumbnails {
+  margin-top: 20px;
+  width: 100%;
+  max-width: 1280px;
+  overflow-x: auto;
+  display: flex;
+  gap: 10px;
+  padding-bottom: 10px;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none;  /* IE and Edge */
+  box-sizing: border-box;
+}
+
+.youtube-thumbnails::-webkit-scrollbar {
+  display: none; /* Chrome, Safari */
+}
+
+.youtube-thumbnail {
+  flex: 1 0 22%; /* 기본 너비 22% (대략 4개가 들어가도록) */
+  min-width: 150px; /* 너무 작아지지 않도록 최소 너비 설정 */
+  aspect-ratio: 16 / 9;
+  background-color: #333;
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition: border 0.3s ease;
+}
+
+.youtube-thumbnail:hover,
+.youtube-thumbnail.active {
+  border: 2px solid #00a8ff;
+}
+
+.youtube-thumbnail img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* artist point color */
+.artist_color {
+  color: #fb469b;
+}
+
+.artist_crbg {
+  background-color: #fb469b;
+}
+
+/*menu mouse over color*/
+.gnb_list li a:hover {
+  letter-spacing: 0.1em;
 }
 
 /*active gnb menu body*/
@@ -578,52 +740,6 @@ body.active {
   margin: 0 25px;
 }
 
-/* common - Footer */
-#footer {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  min-width: 1200px;
-  z-index: 111;
-  height: 60px;
-}
-
-#footer:after {
-  display: block;
-  clear: both;
-  content: '';
-}
-
-.copyright {
-  position: absolute;
-  width: 100%;
-  bottom: 45px;
-  text-align: right;
-  right: 3%;
-  font-family: 'Montserrat';
-  font-size: 16px;
-  font-weight: 700;
-  color: #fff;
-}
-
-.copyright.wh {
-  color: #fff;
-}
-
-.q {
-  color: #fff;
-}
-.w {
-  color: #ff4edb;
-}
-.e {
-  color: #00a8ff;
-}
-.r {
-  color: #00c853;
-}
-
 .policy_privacy {
   position: absolute;
   top: 25px;
@@ -634,47 +750,18 @@ body.active {
   color: #4e4c4c;
 }
 
-/*SNS*/
-.sns {
-  position: fixed;
-  bottom: 45px;
-  left: 3%;
-}
+@media only screen and (max-width: 1920px) {
+  #wrap {
+    min-width: 1440px;
+  }
 
-.sns li,
-.sns_menu li {
-  margin-bottom: 27px;
-  width: 20px;
-  height: 20px;
-  display: block;
-}
+  .right_cont {
+    width: 750px;
+  }
 
-.sns li:hover,
-.sns_menu li:hover {
-  margin-left: 5px;
-  transition: all 0.5s;
-}
-
-.sns li img,
-.sns_menu li img {
-  width: 100%;
-  max-width: 100%;
-  max-height: 100%;
-  image-rendering: -moz-crisp-edges;
-  -ms-interpolation-mode: bicubic;
-}
-
-.sns_menu {
-  position: absolute;
-  bottom: 45px;
-  left: 3%;
-}
-
-.sns li.tp1,
-.sns_menu li.tp1 {
-  width: 25px;
-  height: 25px;
-  vertical-align: bottom;
+  .main_album .main_album_name a {
+    font-size: 60px;
+  }
 }
 
 @media only screen and (max-width: 1770px) {

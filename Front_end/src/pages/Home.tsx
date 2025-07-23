@@ -6,92 +6,52 @@ import { openInNewTab } from '@/utils/openInNewTab';
 import YouTubeEmbed from '@/components/common/YouTubeEmbed';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
-import { videoIds } from '@/data/videoIds'; // 영상 ID 배열
+import { videoIds } from '@/data/videoIds';
 
 const Home = () => {
   const [selectedIndex, setSelectedIndex] = useState(0);
 
   return (
-    <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+    <div id="wrap" className="main_wrap">
       <Header />
 
-      <main
-        style={{
-          display: 'flex',
-          flexDirection: 'row',
-          width: '100%',
-          maxWidth: 1440,
-          padding: '40px 20px',
-          gap: 20,
-          margin: '0 auto',
-        }}
-      >
-        {/* SNS 영역 */}
-        <aside>
-          <ul
-            className="sns_menu"
-            style={{
-              display: 'flex',
-              flexDirection: 'column',
-              gap: 20,
-              alignItems: 'flex-start',
-            }}
-          >
-            {socialLinks.map((social) => (
-              <li
-                key={social.id}
-                className={social.type || ''}
-                onClick={() => openInNewTab(social.url)}
-                title={social.id}
-                style={{ cursor: 'pointer' }}
-              >
-                <img src={social.icon} alt={`${social.id} 아이콘`} width={32} height={32} />
-              </li>
-            ))}
-          </ul>
-        </aside>
+      {/* SNS 메뉴: #wrap 바로 아래, fixed 위치 */}
+      <aside className="sns-menu">
+        <ul>
+          {socialLinks.map((social) => (
+            <li
+              key={social.id}
+              className={social.type || ''}
+              onClick={() => openInNewTab(social.url)}
+              title={social.id}
+            >
+              <img src={social.icon} alt={`${social.id} 아이콘`} width={32} height={32} />
+            </li>
+          ))}
+        </ul>
+      </aside>
 
-        {/* 유튜브 영상 + 썸네일 영역 */}
-        <section style={{ flex: 1 }}>
-          {/* 큰 영상 영역 */}
-          <div style={{ marginBottom: 40 }}>
+      {/* 유튜브 영상과 썸네일 영역 */}
+      <main id="youtube-section">
+        <section className="youtube-container">
+          <div className="youtube-main-video">
             <YouTubeEmbed
               videoId={videoIds[selectedIndex]}
               width="100%"
-              height={640}
             />
           </div>
 
-          {/* 썸네일 스와이프 영역 */}
-          <div>
+          <div className="youtube-thumbnails">
             <Swiper spaceBetween={20} slidesPerView={4}>
               {videoIds.map((id, idx) => (
                 <SwiperSlide key={`${id}-${idx}`}>
                   <div
+                    className={`youtube-thumbnail ${idx === selectedIndex ? 'active' : ''}`}
                     onClick={() => setSelectedIndex(idx)}
-                    style={{
-                      width: '100%',
-                      height: 190,
-                      border:
-                        idx === selectedIndex
-                          ? '3px solid #007bff'
-                          : '2px solid #ccc',
-                      borderRadius: 8,
-                      cursor: 'pointer',
-                      overflow: 'hidden',
-                      boxSizing: 'border-box',
-                      transition: 'border 0.2s ease',
-                    }}
                   >
                     <img
                       src={`https://img.youtube.com/vi/${id}/mqdefault.jpg`}
                       alt={`Video thumbnail ${idx + 1}`}
-                      style={{
-                        width: '100%',
-                        height: '100%',
-                        objectFit: 'cover',
-                        display: 'block',
-                      }}
                     />
                   </div>
                 </SwiperSlide>
@@ -100,8 +60,6 @@ const Home = () => {
           </div>
         </section>
       </main>
-
-      <Footer />
     </div>
   );
 };

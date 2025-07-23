@@ -3,13 +3,11 @@ import React from 'react';
 interface YouTubeEmbedProps {
   videoId: string;
   width?: string | number;
-  height?: string | number;
 }
 
 const YouTubeEmbed: React.FC<YouTubeEmbedProps> = ({
   videoId,
   width = '100%',
-  height = 640,
 }) => {
   return (
     <div
@@ -17,7 +15,7 @@ const YouTubeEmbed: React.FC<YouTubeEmbedProps> = ({
         position: 'relative',
         width: typeof width === 'number' ? `${width}px` : width,
         maxWidth: '100%',
-        height: typeof height === 'number' ? `${height}px` : height,
+        aspectRatio: '16 / 9',   // 이걸로 높이 자동 계산됨
         margin: '0 auto',
       }}
     >
@@ -30,8 +28,13 @@ const YouTubeEmbed: React.FC<YouTubeEmbedProps> = ({
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowFullScreen
         style={{
-          borderRadius: 12,
+          borderRadius: 0,
           display: 'block',
+          position: 'absolute',
+          top: 0,
+          left: 0,
+          width: '100%',
+          height: '100%',
         }}
       />
     </div>

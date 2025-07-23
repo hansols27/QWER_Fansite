@@ -6,9 +6,6 @@ export const videoIds = [
   'AlirzLFEHUI',
   'JFGRPgYeu38',
   'ImuWa3SJulY',
-  'WGm2HmXeeR',
   'On6Pm4M-dQQ',
-  'MPK7oP1--4',
-  'WErehcuzF_g',
   'WErehcuzF_g',
 ];
