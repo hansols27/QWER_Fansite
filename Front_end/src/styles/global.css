@@ -231,7 +231,7 @@ a:hover {
   font-family: 'Montserrat';
   font-weight: 300;
   color: #000;
-  font-size: 17pt;
+  font-size: 16pt;
 }
 
 .logo img {
@@ -839,19 +839,20 @@ body.active {
     margin-left: 5px !important;
   }
 }
-
-.video-section {
-  width: 1440px;
+/* YouTube Responsive Player */
+.youtube-wrapper {
   display: flex;
-  flex-direction: column;
-  gap: 40px;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #0e1726;
+  padding: 2rem;
+  box-sizing: border-box;
 }
 
-.video-main {
-  width: 1440px;
-  height: 640px;
-}
-
-.video-thumbnails {
-  width: 1440px;
+.youtube-player {
+  width: 100%;
+  max-width: 1280px;
+  aspect-ratio: 16 / 9;
+  border: none;
 }

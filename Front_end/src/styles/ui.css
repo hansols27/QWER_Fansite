@@ -1,8 +1,6 @@
 @charset "UTF-8";
-/* 20210906 Import */
-/* @import url("../css/common/font.css"); */
 
-/* 20210906 font */
+/* font */
 @font-face {
     font-family: "spoqanthin";
     font-style: normal;
@@ -77,7 +75,7 @@
     padding: 0 50px;
 }
 
-    /* 20210518 .cont.schedule,.cont.profile 추가 */
+    /* .cont.schedule,.cont.profile 추가 */
     .cont.notice_view,
     .cont.discography,
     .cont.discography_view,
@@ -183,7 +181,6 @@
 
 
 /*profile*/
-/* 20210518 .cont.profile 다른 페이지들과 동일하게 디자인 적용으로 인해 삭제 */
 
 .cont.profile > div {
     float: left;
@@ -257,7 +254,7 @@
         margin-top: 10px;
     }
 
-    /* 20210518 프로필 네임 길어졌을 시 대응 */
+    /* 프로필 네임 길어졌을 시 대응 */
     .profile_txt .name_tt {
         position: relative;
         width: 275px;
@@ -291,7 +288,7 @@
     overflow: hidden;
 }
 
-/* 20210518 앨범 뒤 box-shadow 수정 */
+/* 앨범 뒤 box-shadow */
 .onlin_cover {
     position: relative;
     width: 455px;
@@ -429,7 +426,7 @@
         font-size: 15pt;
         margin-bottom: 10px;
     }
-    /* 20210906 수정*/
+    
     .dis_txt_top .album_name {
         font-family: spoqanbold;
         font-size: 25pt;
@@ -437,15 +434,12 @@
         margin-bottom: 50px;
     }
 
-/* 20210906 수정*/
 .dis_txt_tt {
     position: relative;
     padding-bottom: 50px;
     font-family: spoqanbold;
     font-size: 11pt;
     line-height: 30px;
-    /* word-break: keep-all;
-    word-wrap: break-word;*/
 }
 
 .dis_txt_stt {
@@ -460,10 +454,8 @@
         line-height: 25px;
         margin-bottom: 10px;
     }
-        /*0829수정끝*/
+        
         .dis_txt_stt div p {
-            /* word-break: keep-all;
-    word-wrap: break-word;*/
             display: inline-block;
             vertical-align: top;
             width: 97%;
@@ -483,8 +475,6 @@
     line-height: 25px;
     float: left;
     padding-bottom: 50px;
-    /*font-family: 'Noto Sans';
-    word-break:keep-all; word-wrap:break-word;*/
 }
 
 .morecontent span {
@@ -533,7 +523,6 @@
         margin-bottom: 20px;
     }
 
-/* 20210906 수정 */
 .text-tall {
     font-size: 10pt;
     line-height: 25px;
@@ -840,7 +829,7 @@
     }
 
 
-        /* 20210518 font-weight 수정*/
+        /* font-weight */
         .new_release_list .txt p {
             overflow: hidden;
             position: relative;
@@ -851,9 +840,8 @@
             white-space: nowrap;
             text-overflow: ellipsis;
             box-sizing: border-box;
-            /*word-break: keep-all;*/
         }
-        /* 20210518 font-weight 수정*/
+        /* font-weight */
         .new_release_list .txt span {
             position: absolute;
             top: 0;
@@ -984,7 +972,6 @@
 
 /*video*/
 
-/* 20210906 수정 */
 .video_list {
     overflow: hidden;
     position: relative;
@@ -992,7 +979,7 @@
     height: auto;
     margin: 100px 0
 }
-/* 20210906 수정 */
+
 .select_video {
     position: relative;
     width: 1100px;
@@ -1022,7 +1009,6 @@
             line-height: 10px;
             color: #484848;
             margin-top: 7px;
-            /*font-family: 'Montserrat';*/
         }
 
     .new_release_list.vd_list .img {
@@ -1060,7 +1046,7 @@
     margin-top: -35px;
 }
 
-/* 20210518 비디오리스트 정렬 수정 */
+/* 비디오리스트 정렬 */
 .new_release_list.vd_list .new_video_cont {
     position: relative;
     width: 360px;
@@ -1070,10 +1056,6 @@
     .new_release_list.vd_list .new_video_cont:first-child {
         margin-left: 0
     }
-
-/*.new_release_list.vd_list .new_video_cont.nob {
-        margin-right: 0;
-    }*/
 
 .new_release_list .new_video_cont .list-hover .play_bt {
     -webkit-transform: scale(0.9);
@@ -1346,7 +1328,6 @@
 
 
 /*schedule*/
-/* 20210518 .cont.schedule 다른 페이지들과 동일하게 디자인 적용으로 인해 삭제 */
 
 .schedule_cd {
     width: 100%;
@@ -1565,7 +1546,6 @@
         font-family: 'Montserrat';
     }
 
-/*0828추가*/
 /* 에러페이지 */
 .cont.errorpage {
     position: absolute;
@@ -1625,7 +1605,6 @@
     -webkit-transition: all 0.2s;
     transition: all 0.2s;
 }
-/*0828끝*/
 
 /*링크 css*/
 .play_link > .svg-icon {
@@ -1638,4 +1617,3 @@
 }
 
 
-/*# sourceMappingURL=ui.css.map */

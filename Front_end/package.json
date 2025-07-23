@@ -2,6 +2,7 @@
   "dependencies": {
     "lts": "^2.0.0",
     "react-router-dom": "^7.7.0",
+    "react-youtube": "^10.1.0",
     "swiper": "^11.2.10"
   },
   "devDependencies": {
