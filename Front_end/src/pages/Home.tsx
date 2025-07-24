@@ -20,6 +20,7 @@ const Home = () => {
       {/* 헤더에 상태와 핸들러 전달 */}
       <Header onMenuClick={handleMenuOpen} isSideNavOpen={isSideNavOpen} />
 
+      {/* 사이드 네비게이션 */}
       <SideNav isOpen={isSideNavOpen} onClose={handleMenuClose} />
 
       {/* SNS 메뉴 */}

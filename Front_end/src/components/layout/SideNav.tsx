@@ -11,15 +11,22 @@ const SideNav: React.FC<SideNavProps> = ({ isOpen, onClose }) => {
   if (!isOpen) return null;
 
   return (
-    <nav className="gnb open">
-      <button className="menu_close" onClick={onClose} type="button">
-        <img src={close} alt="닫기" />
-      </button>
+    <nav className="gnb open" aria-label="사이드 네비게이션">
+      <div className="gnb-header">
+        <button
+          className="menu_close"
+          onClick={onClose}
+          type="button"
+          aria-label="사이드메뉴 닫기"
+        >
+          <img src={close} alt="닫기 아이콘" />
+        </button>
 
-      <div className="logo">
-        <a href="/">
-          <img src={logo} alt="로고" />
-        </a>
+        <div className="logo">
+          <a href="/">
+            <img src={logo} alt="사이트 로고" />
+          </a>
+        </div>
       </div>
 
       <ul className="gnb_list">
