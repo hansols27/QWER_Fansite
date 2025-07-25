@@ -28,10 +28,13 @@ export const Router = () => (
         </ul>
       </aside>
 
-      <Routes>
-        <Route path="/" element={<Home />} />
-      </Routes>
+      <main id="main-content">
+        <Routes>
+          <Route path="/" element={<Home />} />
+        </Routes>
+      </main>
 
+      {/* 푸터 */}
       <Footer />
     </BrowserRouter>
   </div>
