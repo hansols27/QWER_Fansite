@@ -1,13 +1,10 @@
 export const videoIds = [
   'pifz9JH1Re8',
-  'CGvqj7bzCVY',
   '8IMPpF2tIWI',
   '7qRCUAQ_XC8',
   'AlirzLFEHUI',
   'JFGRPgYeu38',
   'ImuWa3SJulY',
   'WGm2HmXeeRI',  
-  'On6Pm4M-dQQ',
-  'WErehcuzF_g',
-  'zVyGw2j-t4g'
+  'On6Pm4M-dQQ'
 ];
