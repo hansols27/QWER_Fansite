@@ -238,6 +238,8 @@ address, caption, cite, code, dfn, em, var {
     top: auto;
     left: auto;
     transform: none;
+    min-width: 370px;
+    max-width: 100%;
     padding: 100px 16px 80px;
   }
   .gnb_list li {
