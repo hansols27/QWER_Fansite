@@ -20,13 +20,7 @@ const SideNav: React.FC<SideNavProps> = ({ isOpen, onClose }) => {
           aria-label="사이드메뉴 닫기"
         >
           <img src={close} alt="닫기 아이콘" />
-        </button>
-
-        <div className="logo">
-          <a href="/">
-            <img src={logo} alt="사이트 로고" />
-          </a>
-        </div>
+        </button>        
       </div>
 
       <ul className="gnb_list">
