@@ -4,7 +4,6 @@ import logo from '@/assets/images/logo.svg';
 import menu from '@/assets/icons/menu.png';
 import SideNav from '@/components/layout/SideNav';
 
-
 const Header = () => {
   const [isSideNavOpen, setIsSideNavOpen] = useState(false);
 
@@ -28,7 +27,6 @@ const Header = () => {
               src={menu}
               alt="Menu"
               onClick={handleMenuOpen}
-              className="cursor-pointer"
               role="button"
               tabIndex={0}
               onKeyDown={(e) => {
@@ -41,7 +39,7 @@ const Header = () => {
           </nav>
         )}
       </header>
-    
+
       {/* 사이드 네비게이션 */}
       <SideNav isOpen={isSideNavOpen} onClose={handleMenuClose} />
     </>

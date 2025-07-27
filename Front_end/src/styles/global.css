@@ -14,7 +14,7 @@ body {
   font-weight: 400;
   color: #0c0c0c;
   background-color: #0e1726;
-  overflow-x: hidden;
+  overflow: hidden;
 }
 
 img,
@@ -65,10 +65,11 @@ var {
 
 /* Layout */
 #wrap {
-  position: relative;
+  display: flex;
+  flex-direction: column;
   min-height: 100vh;
-  -ms-overflow-style: none;
-  scrollbar-width: none;
+  overflow: hidden;
+  position: relative;
 }
 
 #wrap::-webkit-scrollbar {
@@ -77,7 +78,7 @@ var {
 
 /* Header */
 #header {
-  position: sticky;
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
@@ -85,13 +86,14 @@ var {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 40px 20px 0;
-  z-index: 999;
+  padding: 40px 40px 40px;
+  z-index: 1000;
 }
 
 #header .logo img,
 #header .menu img {
   width: 40px;
+  cursor: pointer;
 }
 
 /* Menu */
@@ -101,7 +103,7 @@ var {
   left: 0;
   width: 100%;
   height: 120px;
-  padding: 40px 20px 0;
+  padding: 40px 40px 0;
   display: flex;
   align-items: center;
   justify-content: flex-end;
@@ -142,7 +144,7 @@ var {
 }
 
 .gnb_list li a {
-  font-size: 27pt;
+  font-size: 30pt;
   font-weight: 500;
   font-family: 'Montserrat';
   color: #333;
@@ -156,12 +158,19 @@ var {
 
 /* Footer */
 #footer {
-  position: absolute;
+  position: fixed;
   left: 0;
   bottom: 0;
   width: 100%;
-  padding: 40px 20px;
+  padding: 40px 40px;
   text-align: right;
+  z-index: 1000;
+}
+
+.footer-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .copyright {
@@ -186,7 +195,7 @@ var {
 
 /* SNS Menu */
 .sns-menu {
-  position: fixed;
+  position: static;
   bottom: 40px;
   left: 20px;
   z-index: 9999;
@@ -194,9 +203,9 @@ var {
 
 .sns-menu ul {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   list-style: none;
-  gap: 25px;
+  gap: 15px;
   padding: 0;
   margin: 0;
 }
@@ -205,11 +214,11 @@ var {
   width: 25px;
   height: 25px;
   cursor: pointer;
-  transition: margin-left 0.5s ease;
+  transition: margin-left 0.3s ease;
 }
 
 .sns-menu li:hover {
-  margin-left: 5px;
+  transform: translateX(5px);
 }
 
 .sns-menu li img {
@@ -227,23 +236,33 @@ var {
 
 /* Main Content */
 #main-content {
+  position: absolute;
+  top: 120px; /* 헤더 높이 */
+  bottom: 105px; /* 푸터 높이 */
+  left: 0;
+  right: 0;
   width: 100%;
   max-width: 1600px;
   margin: 0 auto;
-  padding: 40px 70px 160px;
+  padding: 0 120px; /* 좌우 패딩 */
+  box-sizing: border-box;
+  overflow: hidden; /* 내부 스크롤 금지 */
+  display: flex;
+  flex-direction: column;
+  z-index: 1;
 }
 
 @media (max-width: 767px) {
   #header,
   .gnb-header {
     height: 80px;
-    padding: 0 16px;
+    padding: 0 20px;
   }
 
   #header .logo img,
   #header .menu img,
   .gnb-header .menu_close img {
-    width: 28px;
+    width: 25px;
   }
 
   .gnb_list {
@@ -253,28 +272,28 @@ var {
     transform: none;
     min-width: 370px;
     max-width: 100%;
-    padding: 100px 16px 80px;
+    padding: 100px 20px 80px;
   }
   .gnb_list li {
-    margin: 16px 0;
+    margin: 20px 0;
   }
   .gnb_list li a {
-    font-size: 22px;
+    font-size: 24px;
   }
 
   #footer {
-    padding: 20px 16px;
+    padding: 20px 15px;
   }
   .copyright {
     font-size: 12px;
   }
 
   .sns-menu {
-    left: 16px;
+    left: 15px;
     bottom: 20px;
   }
   .sns-menu ul {
-    gap: 16px;
+    gap: 15px;
   }
   .sns-menu li {
     width: 20px;
@@ -282,6 +301,8 @@ var {
   }
 
   #main-content {
-    padding: 20px 50px 80px;
+    top: 60px; /* 헤더 높이 (모바일) */
+    bottom: 45px; /* 푸터 높이 (모바일) */
+    padding: 0 60px;
   }
 }

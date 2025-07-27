@@ -1,5 +1,4 @@
 import React from 'react';
-import logo from '@/assets/images/logo.svg';
 import close from '@/assets/icons/close.png';
 
 interface SideNavProps {
@@ -20,16 +19,28 @@ const SideNav: React.FC<SideNavProps> = ({ isOpen, onClose }) => {
           aria-label="사이드메뉴 닫기"
         >
           <img src={close} alt="닫기 아이콘" />
-        </button>        
+        </button>
       </div>
 
       <ul className="gnb_list">
-        <li><a href="/Default/Profile">PROFILE</a></li>
-        <li><a href="/Default/DiscographyList">DISCOGRAPHY</a></li>
-        <li><a href="/Default/Gallery">GALLERY</a></li>
-        <li><a href="/Default/Video">VIDEO</a></li>
-        <li><a href="/Default/NoticeList">NOTICE</a></li>
-        <li><a href="/Default/Schedule">SCHEDULE</a></li>
+        <li>
+          <a href="/Default/Profile">PROFILE</a>
+        </li>
+        <li>
+          <a href="/Default/DiscographyList">DISCOGRAPHY</a>
+        </li>
+        <li>
+          <a href="/Default/Gallery">GALLERY</a>
+        </li>
+        <li>
+          <a href="/Default/Video">VIDEO</a>
+        </li>
+        <li>
+          <a href="/Default/NoticeList">NOTICE</a>
+        </li>
+        <li>
+          <a href="/Default/Schedule">SCHEDULE</a>
+        </li>
       </ul>
     </nav>
   );
