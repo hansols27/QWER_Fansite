@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import menu from '@/assets/images/main.webp';
+import menu from '@/assets/images/main.png';
 
 const Home = () => {
   const [selectedIndex, setSelectedIndex] = useState(0);
