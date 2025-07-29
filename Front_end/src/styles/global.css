@@ -19,6 +19,11 @@ body {
   overflow: hidden;
 }
 
+body.active {
+  overflow: hidden;
+  touch-action: none; /* 모바일 터치 스크롤 방지 */
+}
+
 img,
 fieldset {
   border: none;
@@ -87,7 +92,7 @@ var {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 40px 40px 40px;
+  padding: 40px 40px;
   z-index: 1000;
 }
 
@@ -97,14 +102,14 @@ var {
   cursor: pointer;
 }
 
-/* Menu */
+/* GNB Header */
 .gnb-header {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 120px;
-  padding: 40px 40px 40px;
+  padding: 40px 40px;
   display: flex;
   align-items: center;
   justify-content: flex-end;
@@ -220,7 +225,7 @@ var {
 }
 
 .sns-menu li:hover {
-  transform: translateX(5px);
+  transform: translateX(4px);
 }
 
 .sns-menu li img {
@@ -239,7 +244,7 @@ var {
 /* Main Content */
 #main-content {
   width: 100%;
-  min-height: 100vh; /* 화면 전체 높이 확보 */
+  min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -251,23 +256,33 @@ var {
 
 .main-image {
   width: 100%;
-  height: auto; /* 비율 유지 */
+  height: auto;
   max-width: 100%;
-  max-height: 100vh; /* 화면 높이를 넘지 않도록 제한 */
+  max-height: 100vh;
   object-fit: cover;
 }
 
-@media (max-width: 767px) {
-  #header,
-  .gnb-header {
+/* ----------------------------- */
+/* Mobile Styles */
+@media screen and (max-width: 768px) {
+  #wrap {
+    display: block;
+    overflow: auto;
+  }
+
+  #header {
     height: 80px;
-    padding: 0 20px;
+    padding: 20px;
   }
 
   #header .logo img,
   #header .menu img {
     width: 30px;
-    cursor: pointer;
+  }
+
+  .gnb-header {
+    height: 80px;
+    padding: 20px;
   }
 
   .gnb-header .menu_close img {
@@ -275,50 +290,115 @@ var {
   }
 
   .gnb_list {
-    position: static;
-    top: auto;
-    left: auto;
-    transform: none;
-    min-width: 370px;
-    max-width: 100%;
-    padding: 100px 20px 80px;
+    top: 45%;
+    transform: translate(-50%, -45%);
+    padding: 0 10px;
   }
+
   .gnb_list li {
-    margin: 20px 0;
+    margin: 25px 0;
   }
+
   .gnb_list li a {
-    font-size: 24px;
+    font-size: 24pt;
+    font-weight: 600;
+    line-height: 30px;
+    color: #333;
+    font-family: 'Montserrat';
+    transition: 0.3s letter-spacing;
+  }
+
+  .gnb_list li a:hover {
+    letter-spacing: 0.1em;
   }
 
   #footer {
-    padding: 20px 15px;
-  }
-  .copyright {
-    font-size: 12px;
+    padding: 20px;
+    text-align: center;
+    background-color: #353535;
   }
 
-  .sns-menu {
-    left: 15px;
-    bottom: 20px;
-  }
-  .sns-menu ul {
+  .footer-inner {
+    flex-direction: column;
     gap: 15px;
   }
+
+  .copyright {
+    font-size: 12px;
+    line-height: 14px;
+  }
+
+  .sns-menu ul {
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+    gap: 10px;
+    padding: 0;
+    margin: 0;
+  }
+
   .sns-menu li {
-    width: 20px;
-    height: 20px;
+    width: 15px;
+    height: 15px;
+  }
+
+  .sns-menu li:hover {
+    transform: translateX(2px);
+  }
+  .sns li.tp1,
+  .sns_menu li.tp1 {
+    width: 15px;
+    height: 15px;
+    vertical-align: bottom;
+  }
+
+  .sns-menu li img {
+    width: 100%;
   }
 
   #main-content {
-    padding: 0 20px;
     flex-direction: column;
-    min-height: auto;
+    justify-content: flex-start;
+    align-items: center;
+    padding-top: 100px;
+    overflow: auto;
   }
 
   .main-image {
-    width: 100%;
-    height: auto;
-    max-height: 70vh;
-    object-fit: contain;
+    max-height: 60vh;
   }
+}
+
+/* ----------------------------- */
+/* ✅ DAY6 전용 요소 */
+.page {
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+}
+
+.section {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+}
+
+.inner {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+  max-width: 1920px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+.scroll {
+  overflow-y: scroll;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.scroll::-webkit-scrollbar {
+  display: none;
 }
