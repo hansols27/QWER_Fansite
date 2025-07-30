@@ -1,5 +1,11 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Home from '@/pages/Home';
+import Profile from '@/pages/Profile';
+import Discography from '@/pages/Discography';
+import Gallery from '@/pages/Gallery';
+import Video from '@/pages/Video';
+import Notice from '@/pages/Notice';
+import Schedule from '@/pages/Schedule';
 import Footer from '@/components/layout/Footer';
 import Header from '@/components/layout/Header';
 
@@ -12,6 +18,12 @@ export const Router = () => (
       <main id="main-content">
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/Profile" element={<Profile />} />
+          <Route path="/Discography" element={<Discography />} />
+          <Route path="/Gallery" element={<Gallery />} />
+          <Route path="/Video" element={<Video />} />
+          <Route path="/Notice" element={<Notice />} />
+          <Route path="/Schedule" element={<Schedule />} />
         </Routes>
       </main>
 

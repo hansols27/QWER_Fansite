@@ -24,22 +24,22 @@ const SideNav: React.FC<SideNavProps> = ({ isOpen, onClose }) => {
 
       <ul className="gnb_list">
         <li>
-          <a href="/Default/Profile">PROFILE</a>
+          <a href="/Profile">PROFILE</a>
         </li>
         <li>
-          <a href="/Default/DiscographyList">DISCOGRAPHY</a>
+          <a href="/Discography">DISCOGRAPHY</a>
         </li>
         <li>
-          <a href="/Default/Gallery">GALLERY</a>
+          <a href="/Gallery">GALLERY</a>
         </li>
         <li>
-          <a href="/Default/Video">VIDEO</a>
+          <a href="/Video">VIDEO</a>
         </li>
         <li>
-          <a href="/Default/NoticeList">NOTICE</a>
+          <a href="/Notice">NOTICE</a>
         </li>
         <li>
-          <a href="/Default/Schedule">SCHEDULE</a>
+          <a href="/Schedule">SCHEDULE</a>
         </li>
       </ul>
     </nav>
