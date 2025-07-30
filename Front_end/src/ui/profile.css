@@ -1,0 +1,98 @@
+/* 전체 프로필 레이아웃 */
+.cont.profile {
+  display: flex;
+  align-items: flex-start;
+  gap: 40px;
+}
+
+/* 멤버 이름 리스트 */
+.member_name {
+  width: 160px;
+  font-size: 12px;
+  font-family: 'Montserrat';
+  font-weight: 400;
+  letter-spacing: 0.2em;
+  text-align: right;
+}
+
+.member_name p {
+  margin-bottom: 7px;
+}
+
+.member_name p:hover {
+  letter-spacing: 0.25em;
+  transition: 0.3s;
+}
+
+.member_name p a {
+  font-family: 'Montserrat';
+  text-decoration: none;
+  color: inherit;
+}
+
+/* 프로필 전체 박스 */
+.pf_inner {
+  display: flex;
+  align-items: flex-start;
+  gap: 40px;
+}
+
+/* 이미지 박스 */
+.profile_img {
+  position: relative;
+  width: 530px;
+  height: 675px;
+}
+
+.color_bg {
+  position: absolute;
+  width: 450px;
+  height: 590px;
+  top: 0;
+  left: 0;
+  opacity: 0.3;
+  background-color: #ccc;
+}
+
+.artist_img {
+  position: relative;
+  width: 86%;
+  margin: 0 auto;
+  top: 40px;
+  box-shadow: 15px 15px 20px 0 #bdbcbc;
+}
+
+.artist_img img {
+  width: 100%;
+  object-fit: fill;
+  vertical-align: bottom;
+}
+
+/* 텍스트 박스 */
+.profile_txt {
+  width: 275px;
+  position: relative;
+  bottom: auto;
+  right: auto;
+}
+
+.profile_txt div {
+  font-size: 12pt;
+  font-weight: 400;
+  margin-top: 10px;
+}
+
+.profile_txt .name_tt {
+  font-size: 25pt;
+  font-family: 'Montserrat';
+  font-weight: 100;
+  letter-spacing: 0.05em;
+  margin-bottom: 15px;
+  word-wrap: break-word;
+  word-break: keep-all;
+}
+
+/* 그림자 효과는 'all'인 경우에만 적용 */
+.artist_img.show-shadow {
+  box-shadow: 15px 15px 20px 0 #bdbcbc;
+}

@@ -1,3 +1,5 @@
+import qwerImg from '@/assets/images/QWER.jpg';
+
 export interface Member {
   id: string;
   name: string;
@@ -12,7 +14,7 @@ export const members: Member[] = [
     name: 'QWER',
     koreanName: '큐더블유이알',
     birth: '2023.10.18',
-    img: 'https://lv2-cdn.azureedge.net/day6/1e1c35d8c0e34967a06435f5033f87ca-Young%20K%20%ED%94%84%EB%A1%9C%ED%95%84.jpg',
+    img: qwerImg,
   },
   {
     id: 'Q',
@@ -35,11 +37,11 @@ export const members: Member[] = [
     birth: '2001.01.30.',
     img: 'https://i.namu.wiki/i/OKJRwxPvC1hhbsFqoNOFCGp6fsOAoAnKoR1tNFq7gySbTxfB8Xe1z8PzCfmsPvoxxBiMYrQT2KCvTex7bit1uhb6ePoqgZ6TbsK0ezfO6WkmLDtYJaRP3V87amzP7dY9wu0dMrrASMDQ8Ju9F2AxhA.webp',
   },
-    {
+  {
     id: 'R',
     name: '시연 (Siyeon)',
     koreanName: '이시연',
     birth: '2000.05.16.',
     img: 'https://i.namu.wiki/i/hvKmXOkoop8-Zcw9Con3GIbzq7Q4epl9f8WVU2xvNl-qzJB5OIChrFo3oMMITiolPKfiJm8yV3Rl9tQ_jZthb1Hugx5sXENYVeBxlN4hLCaKyYb-KB7w9kfLf-Kv9bx9bvbg9UeO4GoKIJ3_BAoSmQ.webp',
-  }
+  },
 ];
