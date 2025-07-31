@@ -8,7 +8,7 @@ export default function Profile() {
 
   return (
     <div id="wrap">
-      {/* Side */}
+      {/* 오른쪽 텍스트 */}
       <div id="side">
         <div className="side2">
           01
@@ -17,15 +17,16 @@ export default function Profile() {
         </div>
       </div>
 
-      {/* Main Container */}
+      {/* 메인 컨텐츠 */}
       <main className="container">
         <div className="cont profile">
-          {/* 좌측: 멤버 이름 리스트 */}
+          {/* 좌측 멤버 리스트 */}
           <div className="member_name">
             {members.map((member) => (
               <p key={member.id}>
                 <a
                   href="#"
+                  className={activeId === member.id ? 'active' : ''}
                   onClick={(e) => {
                     e.preventDefault();
                     setActiveId(member.id);
@@ -37,17 +38,18 @@ export default function Profile() {
             ))}
           </div>
 
-          {/* 우측: 선택된 멤버 프로필 */}
+          {/* 우측 프로필 정보 */}
           {activeMember && (
             <div className="pf_inner">
               <div className="profile_img">
-                {/* id가 'all'이 아닐 때만 배경 표시 */}
-                {activeMember.id !== 'all' && (
-                  <div className="color_bg artist_crbg" />
+                {/* ID에 따른 배경 div 클래스 */}
+                {activeMember.id !== 'All' && (
+                  <div className={`color_bg bg-${activeMember.id}`} />
                 )}
+
                 <div
                   className={`artist_img ${
-                    activeMember.id === 'all' ? 'show-shadow' : ''
+                    activeMember.id === 'All' ? 'show-shadow' : ''
                   }`}
                 >
                   <img
@@ -58,6 +60,7 @@ export default function Profile() {
                   />
                 </div>
               </div>
+
               <div className="profile_txt">
                 <div className="name_tt">{activeMember.name}</div>
                 <div>

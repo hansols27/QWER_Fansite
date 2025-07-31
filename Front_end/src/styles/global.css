@@ -262,40 +262,6 @@ var {
   object-fit: cover;
 }
 
-/* common - right side text */
-#side {
-  position: absolute;
-  width: 100%;
-  height: auto;
-  overflow: hidden;
-  min-width: 1200px;
-  max-width: 1200px;
-}
-
-#side .side2 {
-  position: fixed;
-  width: 350px;
-  top: 400px;
-  text-align: center;
-  right: -75px;
-  font-family: 'Montserrat';
-  font-weight: 700;
-  font-size: 16pt;
-  letter-spacing: 0.1em;
-  color: #ffffff;
-  transform: rotate(90deg);
-  -webkit-transform: rotate(90deg);
-  -ms-transform: rotate(90deg);
-}
-
-#side .side2 span {
-  display: inline-block;
-  width: 130px;
-  border-top: 1px solid #ffffff;
-  vertical-align: middle;
-  margin: 0 25px;
-}
-
 /* artist logo */
 .ArtistLogo_txt {
   position: absolute;
