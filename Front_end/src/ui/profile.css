@@ -80,8 +80,8 @@
   width: 100%;
   height: auto;
   overflow: hidden;
-  min-width: 1200px;
-  max-width: 1200px;
+  min-width: 1440px;
+  max-width: 1440px;
 }
 
 #side .side2 {
@@ -165,4 +165,3 @@
 .bg-R {
   background-color: #00c853;
 }
-
