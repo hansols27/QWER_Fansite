@@ -11,7 +11,7 @@ const SideNav: React.FC<SideNavProps> = ({ isOpen, onClose }) => {
 
   return (
     <nav className="gnb open" aria-label="사이드 네비게이션">
-      <div className="gnb">
+      <div className="gnb-header">
         <button
           className="menu_close"
           onClick={onClose}

@@ -6,9 +6,15 @@ const Home = () => {
 
   return (
     <>
-      <main id="main-content">
-        <img src={menu} alt="main image" className="main-image" />
-      </main>
+      <div className="container">
+        <div
+          className="main_bgimg wow fadeIn"
+          data-wow-delay="0.0s"
+          style={{
+            backgroundImage: `url(${menu})`,
+          }}
+        ></div>
+      </div>
     </>
   );
 };
