@@ -80,8 +80,8 @@
   width: 100%;
   height: auto;
   overflow: hidden;
-  min-width: 1440px;
-  max-width: 1440px;
+  min-width: 1600px;
+  max-width: 1600px;
 }
 
 #side .side2 {
