@@ -53,7 +53,7 @@
   align-self: flex-end;
   margin-left: auto;
   margin-right: 140px;
-  bottom: 40px;
+  bottom: 50px;
   position: relative;
 }
 
@@ -61,7 +61,11 @@
   position: relative;
   font-size: 14pt;
   font-weight: 400;
-  margin-top: 0px;
+  margin-top: 20px;
+}
+
+.profile_txt p {
+  margin: 0 0 5px 0;
 }
 
 /* 20210518 프로필 네임 길어졌을 시 대응 */
@@ -72,7 +76,7 @@
   font-family: 'Montserrat';
   font-weight: 100;
   letter-spacing: 0.05em;
-  margin-bottom: 15px;
+  margin-bottom: 20px;
   word-wrap: break-word;
   word-break: keep-all;
 }
@@ -91,20 +95,20 @@
   gap: 15px;
   align-items: center;
   margin-top: 20px;
-  padding: 10px 15px;
+  padding: 15px;
   background-color: #fff;
   border-radius: 10px;
+  height: 45px;
 }
 
-.sns_icon {
-  width: 20px;
-  height: 20px;
+.sns-icon {
+  width: 25px;
+  height: 25px;
   object-fit: contain; /* 이미지 비율 유지 */
-  filter: brightness(0) invert(1);
   transition: transform 0.2s ease;
   vertical-align: middle;
 }
 
-.sns_icon:hover {
+.sns-icon:hover {
   transform: scale(1.1);
 }

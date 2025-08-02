@@ -41,7 +41,6 @@ export const members: Member[] = [
         },
       },
     ],
-    /*
     sns: {
       youtube: 'https://www.youtube.com/@QWER_Band_official',
       instagram: 'https://www.instagram.com/qwerband_official',
@@ -50,7 +49,6 @@ export const members: Member[] = [
       weberse: 'https://weverse.io/qwer/artistpedia',
       cafe: 'https://cafe.naver.com/eggkim',
     },
-    */
   },
   {
     id: 'Q',
@@ -70,14 +68,12 @@ export const members: Member[] = [
         },
       },
     ],
-    /*
     sns: {
       youtube: 'https://www.youtube.com/@chodan_',
       instagram: 'https://www.instagram.com/choda._.n',
       tictok: 'https://www.tiktok.com/@chodan__',
       cafe: 'https://cafe.naver.com/chodancafe',
     },
-    */
   },
   {
     id: 'W',
@@ -97,7 +93,6 @@ export const members: Member[] = [
         },
       },
     ],
-    /*
     sns: {
       youtube: 'https://www.youtube.com/@%EB%A7%88%EC%A0%A0%ED%83%80',
       instagram: 'https://www.instagram.com/magenta_6262',
@@ -105,7 +100,6 @@ export const members: Member[] = [
       twitter: 'https://x.com/magentaof62',
       cafe: 'https://cafe.naver.com/magentacafe',
     },
-    */
   },
   {
     id: 'E',
@@ -125,7 +119,6 @@ export const members: Member[] = [
         },
       },
     ],
-    /*
     sns: {
       youtube: 'https://www.youtube.com/@hapycb',
       instagram: 'https://www.instagram.com/i_am_young22',
@@ -133,7 +126,6 @@ export const members: Member[] = [
       twitter: 'https://x.com/hapycb',
       cafe: 'https://cafe.naver.com/nyangworld',
     },
-    */
   },
   {
     id: 'R',
@@ -153,12 +145,10 @@ export const members: Member[] = [
         },
       },
     ],
-    /*
     sns: {
       instagram: 'https://www.instagram.com/siyo.co.kr',
       tictok: 'https://www.tiktok.com/@siyoming___qwer',
       twitter: 'https://x.com/siyo_min',
     },
-    */
   },
 ];
