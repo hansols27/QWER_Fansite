@@ -1,22 +1,22 @@
-/* 전체 프로필 레이아웃 */
-.cont.profile {
-  display: flex;
-  align-items: flex-start;
-  gap: 40px;
+.cont.profile > div {
+  float: left;
+  overflow: hidden;
 }
 
-/* 멤버 이름 리스트 */
 .member_name {
-  width: 160px;
-  font-size: 12px;
+  position: relative;
+  width: 180px;
+  margin-right: 60px;
+  font-size: 14px;
   font-family: 'Montserrat';
   font-weight: 400;
   letter-spacing: 0.2em;
   text-align: right;
+  top: 40px;
 }
 
 .member_name p {
-  margin-bottom: 7px;
+  margin-bottom: 10px;
 }
 
 .member_name p:hover {
@@ -26,22 +26,20 @@
 
 .member_name p a {
   font-family: 'Montserrat';
-  text-decoration: none;
-  color: inherit;
 }
 
-/* 프로필 전체 박스 */
-.pf_inner {
-  display: flex;
-  align-items: flex-start;
-  gap: 40px;
-}
-
-/* 이미지 박스 */
 .profile_img {
   position: relative;
   width: 530px;
-  height: 675px;
+  height: 680px;
+}
+
+.artist_img {
+  position: relative;
+  width: 86%;
+  margin: 0 auto;
+  top: 40px;
+  left: 0;
 }
 
 .artist_img img {
@@ -50,22 +48,27 @@
   vertical-align: bottom;
 }
 
-/* 텍스트 박스 */
 .profile_txt {
-  width: 275px;
+  width: 360px;
+  align-self: flex-end;
+  margin-left: auto;
+  margin-right: 140px;
+  bottom: 40px;
   position: relative;
-  bottom: auto;
-  right: auto;
 }
 
 .profile_txt div {
-  font-size: 12pt;
+  position: relative;
+  font-size: 14pt;
   font-weight: 400;
-  margin-top: 10px;
+  margin-top: 0px;
 }
 
+/* 20210518 프로필 네임 길어졌을 시 대응 */
 .profile_txt .name_tt {
-  font-size: 25pt;
+  position: relative;
+  width: 360px;
+  font-size: 30pt;
   font-family: 'Montserrat';
   font-weight: 100;
   letter-spacing: 0.05em;
@@ -74,94 +77,34 @@
   word-break: keep-all;
 }
 
-/* common - right side text */
-#side {
-  position: absolute;
-  width: 100%;
-  height: auto;
-  overflow: hidden;
-  min-width: 1600px;
-  max-width: 1600px;
-}
-
-#side .side2 {
-  position: fixed;
-  width: 350px;
-  top: 400px;
-  text-align: center;
-  right: -75px;
-  font-family: 'Montserrat';
-  font-weight: 700;
-  font-size: 16pt;
-  letter-spacing: 0.1em;
-  color: #ffffff;
-  transform: rotate(90deg);
-  -webkit-transform: rotate(90deg);
-  -ms-transform: rotate(90deg);
-}
-
-#side .side2 span {
-  display: inline-block;
-  width: 130px;
-  border-top: 1px solid #ffffff;
-  vertical-align: middle;
-  margin: 0 25px;
-}
-
-/* 프로필 이미지와 배경 공통 스타일 */
-.color_bg {
-  position: absolute;
-  width: 450px;
-  height: 590px;
-  top: 0;
-  left: 0;
-  opacity: 0.3;
-  border-radius: 8px;
-  z-index: 1;
-  background-color: transparent; /* 기본 투명 혹은 id별 색상 */
-  box-shadow: none; /* box-shadow는 제거 */
-}
-
-/* 아티스트 이미지 박스 */
-.artist_img {
+.pf_inner {
+  display: flex;
+  justify-content: space-between;
   position: relative;
-  z-index: 2;
-  width: 455px;
-  height: 580px;
+  width: 80%;
+  margin: 0 auto;
   overflow: hidden;
-  border-radius: 8px;
-  box-sizing: border-box;
 }
 
-.artist_img.show-shadow {
-  box-shadow: 15px 15px 20px rgba(189, 188, 188, 0.8);
-  border-radius: 8px;
-  position: relative;
-  z-index: 2;
-}
-
-/* .bg-All은 크기와 위치를 다른 bg-*와 맞춰서 수정 */
-.bg-All {
-  position: absolute;
-  width: 450px;
-  height: 590px;
-  top: 0;
-  left: 0;
-}
-
-/* 다른 ID별 배경색 */
-.bg-Q {
+.sns_area {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+  margin-top: 20px;
+  padding: 10px 15px;
   background-color: #fff;
+  border-radius: 10px;
 }
 
-.bg-W {
-  background-color: #ff4edb;
+.sns_icon {
+  width: 20px;
+  height: 20px;
+  object-fit: contain; /* 이미지 비율 유지 */
+  filter: brightness(0) invert(1);
+  transition: transform 0.2s ease;
+  vertical-align: middle;
 }
 
-.bg-E {
-  background-color: #00a8ff;
-}
-
-.bg-R {
-  background-color: #00c853;
+.sns_icon:hover {
+  transform: scale(1.1);
 }

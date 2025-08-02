@@ -3,7 +3,6 @@ import menu from '@/assets/images/main.png';
 
 const Home = () => {
   const [selectedIndex, setSelectedIndex] = useState(0);
-
   return (
     <>
       <div className="container">
