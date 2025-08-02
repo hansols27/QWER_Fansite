@@ -112,3 +112,50 @@
 .sns-icon:hover {
   transform: scale(1.1);
 }
+
+/* 모바일 화면 (최대 768px) */
+@media (max-width: 768px) {
+  .pf_inner {
+    flex-direction: column;
+    align-items: center;
+    width: 90%;
+  }
+
+  .member_name {
+    width: 100%;
+    margin-right: 0;
+    text-align: center;
+    top: 0;
+    margin-bottom: 20px;
+  }
+
+  .profile_img {
+    width: 90%;
+    height: auto;
+  }
+
+  .profile_txt {
+    width: 90%;
+    margin: 20px 0 0;
+    align-self: center;
+    bottom: 0;
+  }
+
+  .profile_txt .name_tt {
+    width: 100%;
+    font-size: 20pt;
+    text-align: center;
+  }
+
+  .sns_area {
+    justify-content: center;
+    flex-wrap: wrap;
+    height: auto;
+    padding: 10px;
+  }
+
+  .sns-icon {
+    width: 20px;
+    height: 20px;
+  }
+}
