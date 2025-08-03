@@ -36,10 +36,13 @@ const SideNav: React.FC<SideNavProps> = ({ isOpen, onClose }) => {
           <a href="/Video">VIDEO</a>
         </li>
         <li>
+          <a href="/Schedule">SCHEDULE</a>
+        </li>
+        <li>
           <a href="/Notice">NOTICE</a>
         </li>
         <li>
-          <a href="/Schedule">SCHEDULE</a>
+          <a href="/Coummunity">COMMUNITY</a>
         </li>
       </ul>
     </nav>

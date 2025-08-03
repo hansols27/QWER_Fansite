@@ -4,8 +4,9 @@ import Profile from '@/pages/Profile';
 import Discography from '@/pages/Discography';
 import Gallery from '@/pages/Gallery';
 import Video from '@/pages/Video';
-import Notice from '@/pages/Notice';
 import Schedule from '@/pages/Schedule';
+import Notice from '@/pages/Notice';
+import Community from '@/pages/Community';
 import Footer from '@/components/layout/Footer';
 import Header from '@/components/layout/Header';
 
@@ -22,8 +23,9 @@ export const Router = () => (
           <Route path="/Discography" element={<Discography />} />
           <Route path="/Gallery" element={<Gallery />} />
           <Route path="/Video" element={<Video />} />
-          <Route path="/Notice" element={<Notice />} />
           <Route path="/Schedule" element={<Schedule />} />
+          <Route path="/Notice" element={<Notice />} />
+          <Route path="/Community" element={<Community />} />
         </Routes>
       </main>
 
