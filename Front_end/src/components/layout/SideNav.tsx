@@ -1,5 +1,6 @@
 import React from 'react';
 import close from '@/assets/icons/close.png';
+import { Link } from 'react-router-dom';
 
 interface SideNavProps {
   isOpen: boolean;
@@ -24,25 +25,28 @@ const SideNav: React.FC<SideNavProps> = ({ isOpen, onClose }) => {
 
       <ul className="gnb_list">
         <li>
-          <a href="/Profile">PROFILE</a>
+          <Link to="/">Home</Link>
         </li>
         <li>
-          <a href="/Discography">DISCOGRAPHY</a>
+          <Link to="/Profile">Profile</Link>
         </li>
         <li>
-          <a href="/Gallery">GALLERY</a>
+          <Link to="/Discography">Discography</Link>
         </li>
         <li>
-          <a href="/Video">VIDEO</a>
+          <Link to="/Gallery">Gallery</Link>
         </li>
         <li>
-          <a href="/Schedule">SCHEDULE</a>
+          <Link to="/Video">Video</Link>
         </li>
         <li>
-          <a href="/Notice">NOTICE</a>
+          <Link to="/Schedule">Schedule</Link>
         </li>
         <li>
-          <a href="/Coummunity">COMMUNITY</a>
+          <Link to="/Notice">Notice</Link>
+        </li>
+        <li>
+          <Link to="/Community">Community</Link>
         </li>
       </ul>
     </nav>

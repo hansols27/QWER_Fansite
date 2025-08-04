@@ -1,5 +1,4 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import { Link } from 'react-router-dom';
 import Home from '@/pages/Home';
 import Profile from '@/pages/Profile';
 import Discography from '@/pages/Discography';
@@ -19,34 +18,14 @@ export const Router = () => (
 
       <main id="main-content">
         <Routes>
-          <nav>
-            <ul>
-              <li>
-                <Link to="/">Home</Link>
-              </li>
-              <li>
-                <Link to="/Profile">Profile</Link>
-              </li>
-              <li>
-                <Link to="/Discography">Discography</Link>
-              </li>
-              <li>
-                <Link to="/Gallery">Gallery</Link>
-              </li>
-              <li>
-                <Link to="/Video">Video</Link>
-              </li>
-              <li>
-                <Link to="/Schedule">Schedule</Link>
-              </li>
-              <li>
-                <Link to="/Notice">Notice</Link>
-              </li>
-              <li>
-                <Link to="/Community">Community</Link>
-              </li>
-            </ul>
-          </nav>
+          <Route path="/" element={<Home />} />
+          <Route path="/Profile" element={<Profile />} />
+          <Route path="/Discography" element={<Discography />} />
+          <Route path="/Gallery" element={<Gallery />} />
+          <Route path="/Video" element={<Video />} />
+          <Route path="/Schedule" element={<Schedule />} />
+          <Route path="/Notice" element={<Notice />} />
+          <Route path="/Community" element={<Community />} />
         </Routes>
       </main>
 
