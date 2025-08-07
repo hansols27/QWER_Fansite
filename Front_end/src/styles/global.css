@@ -432,7 +432,7 @@ body.active {
   top: 0;
   font-family: 'Montserrat';
   font-size: 40pt;
-  color: #333;
+  color: #fff;
   font-weight: 300;
   letter-spacing: 0.05em;
 }
@@ -447,7 +447,7 @@ body.active {
   width: 100%;
   text-align: left;
   padding-bottom: 80px;
-  border-bottom: 1px solid #000;
+  border-bottom: 1px solid #fff;
 }
 
 /* common - pagenation */
@@ -615,16 +615,16 @@ body.active {
   width: 100%;
   height: auto;
   overflow: hidden;
-  min-width: 1200px;
-  max-width: 1200px;
+  min-width: 1440px;
+  max-width: 10px;
 }
 
 #side .side2 {
   position: fixed;
-  width: 350px;
+  width: 380px;
   top: 400px;
   text-align: center;
-  right: -75px;
+  right: -120px;
   font-family: 'Montserrat';
   font-weight: 700;
   font-size: 14pt;
