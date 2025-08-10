@@ -1,0 +1,82 @@
+.gallery_list {
+  position: relative;
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+  margin: 100px 0 100px 0;
+}
+
+.gallery_list .gl_photo {
+  float: left;
+  width: 32%;
+  margin: 0.6%;
+}
+
+.gallery_list .gl_photo a img {
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.grid {
+  background: #fff;
+  width: 100%;
+  margin: 0 auto;
+}
+
+/* 갤러리 이미지 크기 */
+
+.grid:after {
+  content: '';
+  display: block;
+  clear: both;
+}
+
+.grid-item {
+  float: left;
+  max-width: 355px;
+  margin-bottom: 10px;
+}
+
+.grid-item img {
+  display: block;
+  width: 100%;
+  max-width: 355px;
+  background: #fff;
+}
+
+.cutimg {
+  position: relative;
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+}
+
+.cutimg .layout {
+  position: relative;
+  width: 100%;
+  height: auto;
+  flex-basis: auto;
+  overflow: hidden;
+  float: left;
+}
+
+.cutimg .layout .photobox {
+  position: relative;
+  width: 355px;
+  height: auto;
+  flex-basis: auto;
+  overflow: hidden;
+  margin-right: 1%;
+  margin-bottom: 1%;
+}
+
+.cutimg .layout .photobox img {
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+  flex-basis: auto;
+}
+
+.cutimg .layout:last-child {
+  margin-right: 0%;
+}

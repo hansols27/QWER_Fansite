@@ -61,7 +61,7 @@ export default function Profile() {
                     <img
                       src={item.content}
                       alt={selectedMember.name}
-                      width={455}
+                      width={460}
                       height={580}
                     />
                   </div>

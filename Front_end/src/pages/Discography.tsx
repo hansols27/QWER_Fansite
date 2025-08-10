@@ -1,7 +1,6 @@
 import React from 'react';
 import { albums } from '@/data/album';
 import '@/ui/discography.css';
-
 import more_view from '@/assets/icons/more_view.png';
 import btn_prev from '@/assets/icons/bg-btn-prev.png';
 import btn_next from '@/assets/icons/bg-btn-next.png';
@@ -36,8 +35,8 @@ const Discography: React.FC<DiscographyProps> = ({
                   <img
                     alt={album.title}
                     src={album.imgUrl}
-                    width={344}
-                    height={344}
+                    width={340}
+                    height={340}
                   />
                   <div className="list-hover">
                     <img alt="자세히보기" src={more_view} />
