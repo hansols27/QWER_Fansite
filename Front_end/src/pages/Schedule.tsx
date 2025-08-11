@@ -1,199 +1,158 @@
-import React, { useState } from 'react';
-import '@/ui/schedule.css';
+import React, { useState } from "react";
+import "@/ui/schedule.css";
 
-const Schedule: React.FC = () => {
-  const [yyyy, setYyyy] = useState('2025');
-  const [mm, setMm] = useState('08');
-  const [dd, setDd] = useState('');
+interface ScheduleEvent {
+  day: number;
+  type: "T" | "E" | "A" | "R" | "S";
+  title: string;
+}
+
+export default function Schedule() {
+  const [year, setYear] = useState("2025");
+  const [month, setMonth] = useState("08");
+  const [selectedDay, setSelectedDay] = useState<string>("");
+
+  // 예시 데이터 (실제 데이터는 API로 불러오기 가능)
+  const events: ScheduleEvent[] = [
+    { day: 25, type: "E", title: "Happy Birthday DOWOON ♡" },
+  ];
+
+  const years = ["2025", "2024", "2023", "2022", "2021"];
+  const months = [
+    "JAN", "FEB", "MAR", "APR", "MAY", "JUN",
+    "JUL", "AUG", "SEP", "OCT", "NOV", "DEC"
+  ];
 
   const handleYearChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
-    const year = e.target.value;
-    setYyyy(year);
-    setDd('0');
-    handleSubmit();
+    setYear(e.target.value);
+    setSelectedDay("");
   };
 
-  const changedMonth = (month: string) => {
-    setMm(month);
-    setDd('0');
-    handleSubmit();
+  const handleMonthChange = (monthNum: string) => {
+    setMonth(monthNum);
+    setSelectedDay("");
   };
 
-  const goSch = (day: string) => {
-    setDd(day);
-    handleSubmit();
+  const handleDayClick = (day: number) => {
+    setSelectedDay(String(day));
   };
 
-  const handleSubmit = () => {
-    console.log('Form submitted:', { yyyy, mm, dd });
-    // 실제 요청이 필요하면 fetch 또는 axios로 API 호출
+  const renderCalendar = () => {
+    const daysInMonth = new Date(Number(year), Number(month), 0).getDate();
+    const firstDay = new Date(Number(year), Number(month) - 1, 1).getDay();
+
+    const cells = [];
+    for (let i = 0; i < firstDay; i++) {
+      cells.push(<td key={`empty-${i}`}></td>);
+    }
+
+    for (let day = 1; day <= daysInMonth; day++) {
+      const event = events.find(e => e.day === day);
+      const isSelected = String(day) === selectedDay;
+
+      cells.push(
+        <td
+          key={day}
+          className={day % 7 === 0 ? "sun" : ""}
+        >
+          <div
+            className={isSelected ? "sch_on artist_crbg" : event ? "sch_on" : "sch_off"}
+            onClick={() => handleDayClick(day)}
+          >
+            {day}
+          </div>
+        </td>
+      );
+    }
+
+    const rows = [];
+    for (let i = 0; i < cells.length; i += 7) {
+      rows.push(<tr key={`row-${i}`}>{cells.slice(i, i + 7)}</tr>);
+    }
+
+    return rows;
   };
 
   return (
-    <div id="wrap">
-      <input id="PointColor" name="PointColor" type="hidden" value="#dcffff" />
+    <div className="container">
+      {/* Side */}
+      <div id="side">
+        <div className="side2">
+          06
+          <span className="s_line"></span>
+          SCHEDULE
+        </div>
+      </div>
 
-      <form id="frm" method="post">
-        <input id="Yyyy" name="Yyyy" type="hidden" value={yyyy} />
-        <input id="Mm" name="Mm" type="hidden" value={mm} />
-        <input id="Dd" name="Dd" type="hidden" value={dd} />
-
-        {/* Side */}
-        <div id="side">
-          <div className="side2">
-            06
-            <span className="s_line"></span>
-            SCHEDULE
+      {/* Main */}
+      <div className="cont schedule">
+        {/* Left: 이벤트 상세 */}
+        <div className="n_left" style={{ minHeight: "614px" }}>
+          <div className="title n_tt">SCHEDULE</div>
+          <div className="sch_cont">
+            <ul className="sch_detail">
+              {events.map((e, idx) => (
+                <li key={idx}>
+                  <span className={`sbt_${e.type.toLowerCase()}`}>{e.type}</span>
+                  {e.title}
+                </li>
+              ))}
+            </ul>
           </div>
         </div>
 
-        {/* Container */}
-        <div className="container">
-          <div className="cont schedule">
-            {/* 왼쪽 텍스트 */}
-            <div className="n_left" style={{ minHeight: '614px' }}>
-              <div className="title n_tt">SCHEDULE</div>
-              <div className="sch_cont">
-                <ul className="sch_detail">
-                  <li className="dt_date">25 &nbsp; MON</li>
-                  <li>
-                    <span className="sbt_concert">E</span>Happy Birthday DOWOON
-                    ♡
-                  </li>
-                </ul>
-              </div>
+        {/* Right: 달력 */}
+        <div className="n_right" style={{ minHeight: "652px" }}>
+          <div className="selectbox">
+            <label htmlFor="yearSelect">{year}</label>
+            <select id="yearSelect" value={year} onChange={handleYearChange}>
+              <option value="">선택</option>
+              {years.map(y => (
+                <option key={y} value={y}>{y}</option>
+              ))}
+            </select>
+          </div>
 
-              <div className="page-btn-box nt_bt"></div>
-            </div>
+          <div className="cd_month">
+            {months.map((m, idx) => {
+              const monthNum = String(idx + 1).padStart(2, "0");
+              return (
+                <p key={m} className={month === monthNum ? "month_ck" : ""}>
+                  <a href="#" onClick={(e) => { e.preventDefault(); handleMonthChange(monthNum); }}>
+                    {m}
+                  </a>
+                </p>
+              );
+            })}
+          </div>
 
-            {/* 오른쪽 달력 */}
-            <div className="n_right" style={{ minHeight: '652px' }}>
-              <div className="selectbox">
-                <label htmlFor="ex_select">{yyyy}</label>
-                <select id="ex_select" onChange={handleYearChange} value={yyyy}>
-                  <option value="">선택</option>
-                  <option value="2025">2025</option>
-                  <option value="2024">2024</option>
-                  <option value="2023">2023</option>
-                  <option value="2022">2022</option>
-                  <option value="2021">2021</option>
-                </select>
-              </div>
+          <table className="cd_calendar">
+            <thead>
+              <tr className="cd_week">
+                <th className="sun">SUN</th>
+                <th>MON</th>
+                <th>TUE</th>
+                <th>WED</th>
+                <th>THU</th>
+                <th>FRI</th>
+                <th>SAT</th>
+              </tr>
+            </thead>
+            <tbody>{renderCalendar()}</tbody>
+          </table>
 
-              <div className="cd_month">
-                {[
-                  'JAN',
-                  'FEB',
-                  'MAR',
-                  'APR',
-                  'MAY',
-                  'JUN',
-                  'JUL',
-                  'AUG',
-                  'SEP',
-                  'OCT',
-                  'NOV',
-                  'DEC',
-                ].map((month, index) => {
-                  const monthNum = String(index + 1).padStart(2, '0');
-                  return (
-                    <p
-                      key={month}
-                      className={mm === monthNum ? 'month_ck' : ''}
-                    >
-                      <a
-                        href="#"
-                        onClick={(e) => {
-                          e.preventDefault();
-                          changedMonth(monthNum);
-                        }}
-                      >
-                        {month}
-                      </a>
-                    </p>
-                  );
-                })}
-              </div>
-
-              <table className="cd_calendar">
-                <thead>
-                  <tr className="cd_week">
-                    <th className="sun">SUN</th>
-                    <th>MON</th>
-                    <th>TUE</th>
-                    <th>WED</th>
-                    <th>THU</th>
-                    <th>FRI</th>
-                    <th>SAT</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {/* 날짜 셀 예시 */}
-                  <tr className="cd_day">
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td>
-                      <div className="sch_off">1</div>
-                    </td>
-                    <td>
-                      <div className="sch_off">2</div>
-                    </td>
-                  </tr>
-
-                  {/* 생일이 있는 날 */}
-                  <tr className="cd_day">
-                    <td className="sun">
-                      <div className="sch_off">24</div>
-                    </td>
-                    <td>
-                      <div className="sch_on artist_crbg">
-                        <a
-                          href="#"
-                          onClick={(e) => {
-                            e.preventDefault();
-                            goSch('25');
-                          }}
-                        >
-                          25
-                        </a>
-                      </div>
-                    </td>
-                    <td>
-                      <div className="sch_off">26</div>
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
-
-              {/* 하단 안내 */}
-              <div className="sch_cont bt_color">
-                <ul className="sch_detail">
-                  <li>
-                    <span className="sbt_etc">T</span>ETC
-                  </li>
-                  <li>
-                    <span className="sbt_concert">E</span>Event
-                  </li>
-                  <li>
-                    <span className="sbt_radio">A</span>Anniversary
-                  </li>
-                  <li>
-                    <span className="sbt_magazine">R</span>Release
-                  </li>
-                  <li>
-                    <span className="sbt_tv">S</span>Show
-                  </li>
-                </ul>
-              </div>
-            </div>
+          {/* 하단 안내 */}
+          <div className="sch_cont bt_color">
+            <ul className="sch_detail">
+              <li><span className="sbt_etc">T</span>ETC</li>
+              <li><span className="sbt_concert">E</span>Event</li>
+              <li><span className="sbt_radio">A</span>Anniversary</li>
+              <li><span className="sbt_magazine">R</span>Release</li>
+              <li><span className="sbt_tv">S</span>Show</li>
+            </ul>
           </div>
         </div>
-      </form>
+      </div>
     </div>
   );
-};
-
-export default Schedule;
+}
