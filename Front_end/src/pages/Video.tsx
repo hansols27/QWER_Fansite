@@ -42,8 +42,8 @@ export default function Video() {
   const [activeIndex, setActiveIndex] = useState(0);
 
   return (
-    <div className="video-container">
-      <h1>VIDEO</h1>
+    <div className="cont discography_view wow fadeInUp" data-wow-delay="0.2s">
+        <div className="title">VIDEO</div>
 
       <div className="video-list">
         {videos.map((video, index) => (

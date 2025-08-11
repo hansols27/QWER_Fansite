@@ -109,7 +109,8 @@ export default function Notice() {
       </div>
 
       {/* Main */}
-      <div className="cont notice">
+      <div className="cont discography_view wow fadeInUp" data-wow-delay="0.2s">
+        <div className="title">NOTICE</div>
         {/* Notice List */}
         <div className="noticeList">
           <ul>
