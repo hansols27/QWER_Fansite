@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { albums } from '@/data/album';
+import { albums } from '@/data/albumlist';
 import '@/ui/discography.css';
 
 import more_view from '@/assets/icons/more_view.png';
@@ -38,7 +38,6 @@ export default function Discography() {
       </div>
 
       {/* Main */}
-      <div className="cont discography_view wow fadeInUp" data-wow-delay="0.2s">
         <div className="title">DISCOGRAPHY</div>
 
         {/* 앨범 목록 */}
@@ -93,6 +92,5 @@ export default function Discography() {
           </button>
         </div>
       </div>
-    </div>
   );
 }

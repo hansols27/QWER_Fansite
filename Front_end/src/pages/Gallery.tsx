@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "@/ui/gallery.css";
-import { gallery } from "@/data/gallery";
+import { gallery } from "@/data/gallerylist";
 
 import btn_prev from "@/assets/icons/bg-btn-prev.png";
 import btn_next from "@/assets/icons/bg-btn-next.png";
@@ -28,7 +28,6 @@ export default function Gallery() {
       </div>
 
       {/* Main */}
-      <div className="cont gallery_view wow fadeInUp" data-wow-delay="0.2s">
         <div className="title">GALLERY</div>
 
         {/* 이미지 목록 */}
@@ -78,6 +77,5 @@ export default function Gallery() {
           </button>
         </div>
       </div>
-    </div>
   );
 }

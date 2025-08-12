@@ -1,29 +1,6 @@
 import React, { useState, useRef } from "react";
 import "@/ui/video.css";
-
-interface VideoItem {
-  id: number;
-  title: string;
-  src: string;
-}
-
-const videos: VideoItem[] = [
-  {
-    id: 1,
-    title: "QWER Video 1",
-    src: "https://www.youtube.com/embed/example1",
-  },
-  {
-    id: 2,
-    title: "QWER Video 2",
-    src: "https://www.youtube.com/embed/example2",
-  },
-  {
-    id: 3,
-    title: "QWER Video 3",
-    src: "https://www.youtube.com/embed/example3",
-  },
-];
+import { videos } from "@/data/videolist";
 
 export default function Video() {
   // iframe 참조를 저장하는 useRef (배열 형태)
@@ -42,7 +19,17 @@ export default function Video() {
   const [activeIndex, setActiveIndex] = useState(0);
 
   return (
-    <div className="cont discography_view wow fadeInUp" data-wow-delay="0.2s">
+    <div className="container">
+      {/* Side */}
+      <div id="side">
+        <div className="side2">
+          04
+          <span className="s_line"></span>
+          VIDEO
+        </div>
+      </div>
+
+      {/* Main */}
         <div className="title">VIDEO</div>
 
       <div className="video-list">
