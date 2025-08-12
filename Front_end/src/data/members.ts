@@ -1,9 +1,29 @@
 import { CSSProperties } from 'react';
 import qwerImg from '@/assets/images/QWER.jpg';
 
+import QImg1 from '@/assets/images/Q1_001.jpg';
+import QImg2 from '@/assets/images/Q1_002.jpg';
+import QImg3 from '@/assets/images/Q2_001.jpg';
+import QImg4 from '@/assets/images/Q2_002.jpg';
+
+import WImg1 from '@/assets/images/W1_001.jpg';
+import WImg2 from '@/assets/images/W1_002.jpg';
+import WImg3 from '@/assets/images/W2_001.jpg';
+import WImg4 from '@/assets/images/W3_002.jpg';
+
+import EImg1 from '@/assets/images/E1_001.jpg';
+import EImg2 from '@/assets/images/E2_001.jpg';
+import EImg3 from '@/assets/images/E2_002.jpg';
+import EImg4 from '@/assets/images/E3_001.jpg';
+
+import RImg1 from '@/assets/images/R1_001.jpg';
+import RImg2 from '@/assets/images/R1_002.jpg';
+import RImg3 from '@/assets/images/R2_001.jpg';
+import RImg4 from '@/assets/images/R2_002.jpg';
+
 export interface MemberContentItem {
   type: 'text' | 'image';
-  content: string;
+  content: string | string[];
   style?: CSSProperties;
 }
 
@@ -61,8 +81,7 @@ export const members: Member[] = [
       },
       {
         type: 'image',
-        content:
-          'https://i.namu.wiki/i/dRjPWcZhU3GrVT9w80ZquT7K54-q9DjnmtPJO9dJKtu6WhLPPNjk8tJXp3m1qRGNP6y2Ex11vv3gonkZabOYZ1BK1rziJ8u2X_KEHb0xKMWBrxV6FQUwQCOfQsO0ZoeOkD5CFpnwCRPGCwftQTP6fw.webp',
+        content: [QImg1, QImg2, QImg3, QImg4],
         style: {
           boxShadow: '15px 15px 20px 0 #ffffffff',
         },
@@ -86,8 +105,7 @@ export const members: Member[] = [
       },
       {
         type: 'image',
-        content:
-          'https://i.namu.wiki/i/hbKeWtiKSk5kN0AfvCHP5HfkzB2KXsvGjXHAunCwYrumUvA7H8O2DoHrszpn0mU57W0cUPqiWTK9kX8SKTqPrIuPOu-40W3NUHIUf91F3nTNFuR2MExUyb6We5vq-SiKUDSrL6lgiVdWn0DruGzlpw.webp',
+        content: [WImg1, WImg2, WImg3, WImg4],
         style: {
           boxShadow: '15px 15px 20px 0 #ff4edb',
         },
@@ -112,8 +130,7 @@ export const members: Member[] = [
       },
       {
         type: 'image',
-        content:
-          'https://i.namu.wiki/i/OKJRwxPvC1hhbsFqoNOFCGp6fsOAoAnKoR1tNFq7gySbTxfB8Xe1z8PzCfmsPvoxxBiMYrQT2KCvTex7bit1uhb6ePoqgZ6TbsK0ezfO6WkmLDtYJaRP3V87amzP7dY9wu0dMrrASMDQ8Ju9F2AxhA.webp',
+        content: [EImg1, EImg2, EImg3, EImg4],
         style: {
           boxShadow: '15px 15px 20px 0 #00a8ff',
         },
@@ -138,8 +155,7 @@ export const members: Member[] = [
       },
       {
         type: 'image',
-        content:
-          'https://i.namu.wiki/i/hvKmXOkoop8-Zcw9Con3GIbzq7Q4epl9f8WVU2xvNl-qzJB5OIChrFo3oMMITiolPKfiJm8yV3Rl9tQ_jZthb1Hugx5sXENYVeBxlN4hLCaKyYb-KB7w9kfLf-Kv9bx9bvbg9UeO4GoKIJ3_BAoSmQ.webp',
+        content: [RImg1, RImg2, RImg3, RImg4],
         style: {
           boxShadow: '15px 15px 20px 0 #00c853',
         },
