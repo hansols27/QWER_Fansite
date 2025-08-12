@@ -1,5 +1,6 @@
-.cont.discography > div {
-  float: left;
+.cont.discography {
+  display: flex;
+  flex-wrap: nowrap;
 }
 
 .dis_left {
@@ -120,7 +121,6 @@
   background-color: #fd00f6;
   color: #fff;
   text-align: center;
-  line-height: 30px;
   vertical-align: middle;
   font-family: 'Montserrat';
 }
@@ -199,6 +199,7 @@
   color: #fff;
 }
 
+/* 하단의 release_list / album_img 관련 기존 스타일 유지(필요하면 추가로 정제 가능) */
 .cont.discography_view .release_list {
   position: relative;
   width: 100%;
@@ -216,112 +217,7 @@
   width: 100%;
 }
 
-/*discography - track list*/
-.tracklist {
-  position: relative;
-  width: 100%;
-  height: auto;
-  overflow: hidden;
-  padding-bottom: 50px;
-  min-height: 150px;
-}
-
-.tracklist .tl_tt {
-  position: relative;
-  width: 100%;
-  font-size: 12pt;
-  font-family: 'Montserrat';
-  font-weight: 600;
-  margin-bottom: 20px;
-}
-
-.text-tall {
-  font-size: 10pt;
-  line-height: 25px;
-  font-family: spoqanbold;
-}
-
-.release-playlist ol li,
-.release-playlist ul li {
-  position: relative;
-  padding-left: 30px;
-  list-style: none;
-  counter-increment: step-counter;
-}
-
-.release-playlist ol li:before,
-.release-playlist ul li:before {
-  content: counter(step-counter) '.';
-  position: absolute;
-  left: 0;
-  top: 2px;
-  color: currentColor;
-  font-size: 11pt;
-  font-family: 'Montserrat';
-  font-weight: 400;
-}
-
-.video,
-.release {
-  position: relative;
-  width: 100%;
-  height: auto;
-  overflow: hidden;
-  padding-bottom: 50px;
-  margin-top: 50px;
-}
-
-.video iframe {
-  width: 1100px;
-  height: 619px;
-}
-
-.video .vd_tt,
-.release .rl_tt {
-  position: relative;
-  font-size: 12pt;
-  font-family: 'Montserrat';
-  font-weight: 600;
-  float: left;
-  margin-bottom: 20px;
-}
-
-.release .rl_more {
-  position: relative;
-  margin-bottom: 20px;
-  float: right;
-}
-
-.release .rl_more a {
-  font-size: 11pt;
-  font-family: 'Montserrat';
-  font-weight: 600;
-}
-
-.release .release_list {
-  position: relative;
-  width: 100%;
-  height: auto;
-  overflow: hidden;
-}
-
-.release_list .album_img {
-  position: relative;
-  color: #ffffff;
-  text-align: left;
-  background-color: #000000;
-  font-size: 16px;
-  float: left;
-  width: 24%;
-  height: auto;
-  margin-right: 1%;
-}
-
-.release_list .album_img.nob {
-  margin-right: 0;
-}
-
-/*discography-하단 앨범*/
+/* 공통 album_img hover 효과 유지 */
 .album_img * {
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
@@ -467,131 +363,128 @@
   opacity: 0.1;
 }
 
-/*디스코그라피 리스트 */
+/* 그리드: PC 3열 × 2행 고정(초과 숨김), 모바일 2열 × 3행으로 전환 */
 .new_release_list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  /* 카드 하나의 기본 높이 (이미지 + 텍스트) — 필요시 조정 */
+  --card-height: 380px;
+  max-height: calc(var(--card-height) * 2 + 20px); /* 2행까지만 표시 */
+  overflow: hidden;
   position: relative;
   width: 100%;
-  height: auto;
-  overflow: hidden;
-  margin-top: 100px;
-  display: flex;
-  flex-flow: wrap;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.new_release_list .new_album_img {
-  position: relative;
-  color: #ffffff;
-  text-align: left;
-  font-size: 16px;
-  float: left;
-  width: 32%;
-  margin-right: 2%;
-  margin-bottom: 15px;
-  height: auto;
+/* React 컴포넌트에서 사용된 클래스에 맞춤(.new_album_cont) */
+.new_release_list .new_album_cont {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+  width: 100%;
+  margin: 0;
+  float: none; /* 기존 float 제거 */
+  box-sizing: border-box;
+}
+
+/* 이미지 영역: 정사각으로 고정, 비율 유지(cover) */
+.new_release_list .img {
+  width: 100%;
+  aspect-ratio: 1/1; /* 정사각 */
   overflow: hidden;
+  position: relative;
+  background: #000;
+}
+
+.new_release_list .img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* 중심 크롭으로 균일한 카드 표현 */
+  display: block;
+}
+
+/* 자세히보기 오버레이 (hover) */
+.new_release_list .list-hover {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 180ms ease-in-out;
+}
+
+.new_release_list .img:hover .list-hover,
+.new_release_list .img:focus .list-hover {
   opacity: 1;
 }
 
-.new_release_list .new_album_img.nob {
-  margin-right: 0;
-}
-
-.new_release_list .new_album_img img {
-  width: 100%;
-  margin-bottom: 10px;
-}
-
-.new_release_list .new_album_img .new_album_cont .ab_date {
-  color: #ffffff;
-  font-size: 9pt;
-  margin-bottom: 5px;
-}
-
-.new_release_list .new_album_img .new_album_cont .ab_name a {
-  color: #fff;
-  font-size: 13pt;
-  font-weight: bold;
-  margin-bottom: 5px;
-}
-
-.new_release_list .new_album_img .new_album_cont .ab_name span {
-  position: relative;
-  width: auto;
-}
-
-.new_release_list .new_album_img .new_album_cont .ab_name span:hover:after {
-  width: 100%;
-}
-
-.new_release_list .new_album_img .new_album_cont .ab_name span:after {
-  background-color: #fff;
-  height: 2px;
+.new_release_list .list-hover img {
+  width: 70px;
+  height: 70px;
+  max-width: 70px;
+  max-height: 70px;
   display: block;
-  content: '';
-  position: absolute;
-  top: 45%;
-  left: 0;
-  width: 0;
-  -moz-transition: all 0.2s cubic-bezier(0.15, 0.9, 0.34, 0.95);
-  -o-transition: all 0.2s cubic-bezier(0.15, 0.9, 0.34, 0.95);
-  -webkit-transition: all 0.2s cubic-bezier(0.15, 0.9, 0.34, 0.95);
-  transition: all 0.2s cubic-bezier(0.15, 0.9, 0.34, 0.95);
 }
 
-/* list2 */
+/* 텍스트(제목/날짜) */
 .new_release_list .txt {
-  padding: 20px 0;
+  width: 100%;
+  padding: 8px 0 0 0;
+  position: relative;
+  box-sizing: border-box;
 }
 
 .new_release_list .txt p {
-  overflow: hidden;
-  position: relative;
-  width: 100%;
-  padding-right: 75px;
+  margin: 0;
+  padding-right: 75px; /* 날짜가 우측에 떠 있도록 공간 확보 (global에 날짜 스타일 있으면 조정) */
   font-size: 11pt;
   font-weight: 600;
   white-space: nowrap;
+  overflow: hidden;
   text-overflow: ellipsis;
-  box-sizing: border-box;
+  color: #fff;
+  font-family: 'Montserrat', sans-serif;
 }
 
 .new_release_list .txt span {
   position: absolute;
   top: 0;
   right: 0;
-  z-index: 1;
   font-size: 9pt;
-  float: right;
-  line-height: 10px;
+  line-height: 1.1;
   color: #fff;
-  margin-top: 7px;
-  font-weight: normal;
+  font-weight: 400;
 }
 
-.new_release_list .img {
-  position: relative;
+/* 데스크탑에서 카드 내부 hover 처리 (원래 album_img 효과와 비슷하게 유지) */
+.new_release_list .new_album_cont:hover img {
+  opacity: 0.9;
+  transform: scale(1.01);
+  transition: transform 180ms ease, opacity 180ms ease;
 }
 
-.new_release_list .img img {
-  vertical-align: top;
-  width: 100%;
-}
+/* 모바일(및 작은 화면): 2열 × 3행 표시(높이 제한을 3행으로 변경) */
+@media (max-width: 768px) {
+  .new_release_list {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+    --card-height: 260px;
+    max-height: calc(var(--card-height) * 3 + 30px); /* 모바일에서 3행 노출 */
+  }
 
-.new_release_list .img:hover .list-hover {
-  display: block;
-}
+  .new_release_list .list-hover img {
+    width: 56px;
+    height: 56px;
+  }
 
-.new_release_list .list-hover img {
-  max-width: 70px;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  margin-left: -35px;
-  margin-top: -35px;
-}
-
-.new_release_list .new_album_cont {
-  width: 31.2%;
-  margin: 1%;
-  float: left;
+  .new_release_list .txt p {
+    font-size: 10pt;
+    padding-right: 50px;
+  }
 }
