@@ -1,0 +1,9 @@
+{
+  "devDependencies": {
+    "@types/moment": "^2.11.29",
+    "@types/react-big-calendar": "^1.16.2"
+  },
+  "dependencies": {
+    "moment": "^2.30.1"
+  }
+}
