@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { Calendar, momentLocalizer, Event as RBCEvent } from "react-big-calendar";
 import moment from "moment";
 import "react-big-calendar/lib/css/react-big-calendar.css";
-import "@/styles/schedule.css";
+import '@/ui/schedule.css';
 import { ScheduleEvent } from "@/types/schedule";
 import { EVENTS } from "@/data/schedule";
 
