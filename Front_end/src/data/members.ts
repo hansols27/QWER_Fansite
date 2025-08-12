@@ -14,7 +14,7 @@ import WImg4 from '@/assets/images/W3_002.jpg';
 import EImg1 from '@/assets/images/E1_001.jpg';
 import EImg2 from '@/assets/images/E2_001.jpg';
 import EImg3 from '@/assets/images/E2_002.jpg';
-import EImg4 from '@/assets/images/E3_001.jpg';
+import EImg4 from '@/assets/images/E3_002.jpg';
 
 import RImg1 from '@/assets/images/R1_001.jpg';
 import RImg2 from '@/assets/images/R1_002.jpg';

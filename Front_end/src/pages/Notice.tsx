@@ -22,7 +22,7 @@ export default function Notice() {
       {/* Side */}
       <div id="side">
         <div className="side2">
-          05
+          06
           <span className="s_line"></span>
           NOTICE
         </div>

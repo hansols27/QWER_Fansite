@@ -78,7 +78,7 @@ export default function Schedule() {
       {/* Side */}
       <div id="side">
         <div className="side2">
-          06
+          05
           <span className="s_line"></span>
           SCHEDULE
         </div>

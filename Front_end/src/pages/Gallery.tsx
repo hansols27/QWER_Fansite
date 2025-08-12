@@ -28,6 +28,7 @@ export default function Gallery() {
       </div>
 
       {/* Main */}
+      <div className="main-content">
         <div className="title">GALLERY</div>
 
         {/* 이미지 목록 */}
@@ -52,7 +53,7 @@ export default function Gallery() {
           </ul>
         </div>
 
-        {/* 페이지 버튼 */}
+        {/* Pagination */}
         <div className="page-btn-box nt_bt">
           <button
             type="button"
@@ -77,5 +78,6 @@ export default function Gallery() {
           </button>
         </div>
       </div>
+    </div>
   );
 }
