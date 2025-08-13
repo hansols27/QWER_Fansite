@@ -19,6 +19,7 @@ export interface MemberSNS {
 export interface Member {
   id: string;
   name: string;
+  nameStyle?: React.CSSProperties;
   contents: MemberContentItem[];
   sns?: MemberSNS;
 }

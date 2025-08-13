@@ -48,10 +48,19 @@ export default function Profile() {
                   background: 'none',
                   border: 'none',
                   cursor: 'pointer',
-                  color: 'white',
+                  ...(member.id !== 'All' ? member.nameStyle || {} : {}),
                 }}
               >
-                {member.name}
+                {member.id === 'All' ? (
+                  <>
+                    <span className="q">Q</span>
+                    <span className="w">W</span>
+                    <span className="e">E</span>
+                    <span className="r">R</span>
+                  </>
+                ) : (
+                  member.name
+                )}
               </button>
             </p>
           ))}
@@ -86,7 +95,9 @@ export default function Profile() {
               .filter((item) => item.type === 'text')
               .flatMap((item, idx) =>
                 typeof item.content === 'string'
-                  ? item.content.split('\n').map((line, i) => <p key={`${idx}-${i}`}>{line}</p>)
+                  ? item.content
+                      .split('\n')
+                      .map((line, i) => <p key={`${idx}-${i}`}>{line}</p>)
                   : []
               )}
 

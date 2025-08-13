@@ -276,7 +276,7 @@
   overflow: hidden;
   text-overflow: ellipsis;
   color: #fff;
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Montserrat';
 }
 
 .release_list .txt span {
@@ -307,8 +307,14 @@
   width: 0;
 }
 
-.album_img:before { top: 0; left: 0; }
-.album_img:after { bottom: 0; right: 0; }
+.album_img:before {
+  top: 0;
+  left: 0;
+}
+.album_img:after {
+  bottom: 0;
+  right: 0;
+}
 
 .album_img .album_cont:before,
 .album_img .album_cont:after {

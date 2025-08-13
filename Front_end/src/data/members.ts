@@ -51,10 +51,16 @@ export const members: Member[] = [
   {
     id: 'Q',
     name: 'Chodan',
+    nameStyle: {
+      color: '#ffffff',
+      fontWeight: 'bold',
+      fontFamily: 'Montserrat',
+    },
     contents: [
       {
         type: 'text',
-        content: 'Name : 쵸단\nBirth : 1998.11.01.\nPosition : Leader, Drum, Sub-vocal',
+        content:
+          'Name : 쵸단\nBirth : 1998.11.01.\nPosition : Leader, Drum, Sub-vocal',
       },
       {
         type: 'image',
@@ -74,10 +80,16 @@ export const members: Member[] = [
   {
     id: 'W',
     name: 'Magenta',
+    nameStyle: {
+      color: '#ff4edb',
+      fontWeight: 'bold',
+      fontFamily: 'Montserrat',
+    },
     contents: [
       {
         type: 'text',
-        content: 'Name : 마젠타\nBirth : 1997.06.02.\nPosition : Base, Sub-vocal',
+        content:
+          'Name : 마젠타\nBirth : 1997.06.02.\nPosition : Base, Sub-vocal',
       },
       {
         type: 'image',
@@ -98,10 +110,16 @@ export const members: Member[] = [
   {
     id: 'E',
     name: 'Hina',
+    nameStyle: {
+      color: '#00a8ff',
+      fontWeight: 'bold',
+      fontFamily: 'Montserrat',
+    },
     contents: [
       {
         type: 'text',
-        content: 'Name : 히나\nBirth : 2001.01.30.\nPosition : Guitar, Keyboard, Sub-vocal',
+        content:
+          'Name : 히나\nBirth : 2001.01.30.\nPosition : Guitar, Keyboard, Sub-vocal',
       },
       {
         type: 'image',
@@ -122,10 +140,16 @@ export const members: Member[] = [
   {
     id: 'R',
     name: 'Siyeon',
+    nameStyle: {
+      color: '#00c853',
+      fontWeight: 'bold',
+      fontFamily: 'Montserrat',
+    },
     contents: [
       {
         type: 'text',
-        content: 'Name : 시연\nBirth : 2000.05.16.\nPosition : Main-vocal, Guitar',
+        content:
+          'Name : 시연\nBirth : 2000.05.16.\nPosition : Main-vocal, Guitar',
       },
       {
         type: 'image',
