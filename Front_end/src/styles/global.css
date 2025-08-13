@@ -316,7 +316,7 @@ body.active {
 }
 
 /* common - title text */
-.con.title {
+.title {
   position: relative;
   text-align: center;
   top: 0;
@@ -345,19 +345,22 @@ body.active {
 .page-btn-box {
   position: relative;
   text-align: center;
-  margin: 50px 0 0 0;
+  margin: 60px 0 0 0;
+  background-color: #fff;
+  padding: 10px 0;
+  border-radius: 10px;
 }
 
 .page-btn-box.nt_bt {
   position: relative;
   float: right !important;
-  margin: 50px 0 0 0;
+  margin: 60px 0 0 0;
 }
 
 .page-btn-box .prev-btn {
   display: inline-block;
-  width: 11px;
-  height: 21px;
+  width: 10px;
+  height: 20px;
   font-size: 1px;
   color: transparent;
   overflow: hidden;
@@ -374,16 +377,16 @@ body.active {
   padding: 0 30px;
   color: #393939;
   font-size: 15px;
-  height: 21px;
-  line-height: 21px;
+  height: 20px;
+  line-height: 20px;
   vertical-align: middle;
   letter-spacing: 0;
 }
 
 .page-btn-box .next-btn {
   display: inline-block;
-  width: 11px;
-  height: 21px;
+  width: 10px;
+  height: 20px;
   font-size: 1px;
   color: transparent;
   overflow: hidden;
@@ -623,8 +626,8 @@ body.active {
 #side .side2 {
   position: fixed;
   width: 380px;
-  top: 400px;
   text-align: center;
+  top: 400px;  
   right: -120px;
   font-family: 'Montserrat';
   font-weight: 700;

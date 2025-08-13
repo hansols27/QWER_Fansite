@@ -28,7 +28,7 @@ export default function Gallery() {
       </div>
 
       {/* Main */}
-      <div className="main-content">
+      <div className="cont gallery wow fadeInUp" data-wow-delay="0.2s">
         <div className="title">GALLERY</div>
 
         {/* 이미지 목록 */}
