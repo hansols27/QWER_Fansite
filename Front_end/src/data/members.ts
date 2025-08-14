@@ -54,7 +54,6 @@ export const members: Member[] = [
     nameStyle: {
       color: '#ffffff',
       fontWeight: 'bold',
-      fontFamily: 'Montserrat',
     },
     contents: [
       {
@@ -83,7 +82,6 @@ export const members: Member[] = [
     nameStyle: {
       color: '#ff4edb',
       fontWeight: 'bold',
-      fontFamily: 'Montserrat',
     },
     contents: [
       {
@@ -113,7 +111,6 @@ export const members: Member[] = [
     nameStyle: {
       color: '#00a8ff',
       fontWeight: 'bold',
-      fontFamily: 'Montserrat',
     },
     contents: [
       {
@@ -143,7 +140,6 @@ export const members: Member[] = [
     nameStyle: {
       color: '#00c853',
       fontWeight: 'bold',
-      fontFamily: 'Montserrat',
     },
     contents: [
       {

@@ -8,7 +8,7 @@ import btn_next from '@/assets/icons/bg-btn-next.png';
 
 export default function Discography() {
   const [currentPage, setCurrentPage] = useState(1);
-  const itemsPerPage = 6; // 3 × 2
+  const itemsPerPage = 6; 
   const totalPages = Math.ceil(albums.length / itemsPerPage);
 
   const startIndex = (currentPage - 1) * itemsPerPage;
@@ -47,7 +47,7 @@ export default function Discography() {
                     alt={album.title}
                     src={album.imgUrl}
                     width={300}
-                    height={300}
+                    height={330}
                   />
                   <div className="list-hover">
                     <img alt="자세히보기" src={more_view} />

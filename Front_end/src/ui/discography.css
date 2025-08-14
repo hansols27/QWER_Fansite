@@ -107,10 +107,10 @@
   display: inline-block;
   width: 30px;
   height: 30px;
-  font-size: 7pt;
+  font-size: 10pt;
   border-radius: 15px;
   line-height: 30px;
-  margin-right: 6px;
+  margin-right: 10px;
   background-color: #fd00f6;
   color: #fff;
   text-align: center;
@@ -190,38 +190,37 @@
   color: #fff;
 }
 
-/* ===== Discography Grid (1400px 폭 / 3×2 / 전체 높이 680px) ===== */
+/* ===== Discography Grid ===== */
 .cont.discography_view .release_list {
   display: grid;
-  grid-template-columns: repeat(3, 300px); /* 가로 300px × 3 */
-  grid-auto-rows: auto;
-  gap: 40px 50px; /* 세로 40px, 가로 50px 간격 */
+  grid-template-columns: repeat(3, 300px); 
+  grid-auto-rows: 330px; /* 카드 하나 높이 */
+  gap: 20px 50px; /* 행 간격 20px, 열 간격 50px */
   justify-content: center; /* 가운데 정렬 */
   max-width: 1400px;
-  margin: 60px auto 0; /* 위 여백 100px, 가운데 배치 */
-  height: 680px; /* 전체 목록 높이 고정 */
+  margin: 40px auto 0;
+  height: 680px; /* 2행 높이 고정 */
   box-sizing: border-box;
 }
 
-/* 앨범 카드 컨테이너 */
+/* ===== 앨범 카드 컨테이너 ===== */
 .release_list .album_cont {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: 10px;
-  width: 300px; /* 카드 폭 */
+  width: 300px;
+  height: 330px; /* 카드 높이 고정 */
   box-sizing: border-box;
-  position: relative;
 }
 
-/* 이미지 영역: 1:1 비율 (300×300) */
+/* ===== 이미지 영역: 1:1 비율 (300×300) ===== */
 .release_list .album_img {
   width: 300px;
   height: 300px;
-  overflow: hidden;
-  position: relative;
   background: #000;
-  margin-bottom: 15px; /* 이미지와 텍스트 간격 추가 */
+  overflow: hidden;
+  margin-bottom: 15px; /* 이미지와 텍스트 간격 */
+  position: relative;
 }
 
 .release_list .album_img img {
@@ -229,7 +228,7 @@
   height: 100%;
   object-fit: cover;
   display: block;
-  transition: all 0.2s ease-in;
+  transition: transform 0.2s ease-in, filter 0.2s ease-in;
 }
 
 /* Hover 오버레이 */
@@ -271,7 +270,9 @@
   margin: 0;
   padding-right: 75px;
   font-size: 10pt;
-  font-weight: 600;
+  font-weight: 400;
+  height: 15px; /* 텍스트 영역 높이 */
+  line-height: 15px; /* 세로 가운데 정렬 */
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;

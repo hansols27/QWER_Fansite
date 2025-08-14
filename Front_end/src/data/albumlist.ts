@@ -34,18 +34,4 @@ export const albums: Album[] = [
       'https://lv2-cdn.azureedge.net/day6/c6ad7014600340ee95c2971f77da3e2b-240317_DAY6_MN8_%EC%98%A8%EB%9D%BC%EC%9D%B8%EC%BB%A4%EB%B2%84[%EC%B5%9C%EC%A2%85]_%EC%88%98%EC%A0%95.jpg',
     link: '/Default/DiscographyView?AamSeq=228&AmSeq=0&PgIndex=0',
   },
-  {
-    title: 'Letters with notes',
-    date: '2023-09-04',
-    imgUrl:
-      'https://lv2-cdn.azureedge.net/day6/1d53b6ff27fd447f99bcda5a037e07c6-Young%20K_Letters%20with%20notes.jpg',
-    link: '/Default/DiscographyView?AamSeq=207&AmSeq=0&PgIndex=0',
-  },
-  {
-    title: 'Pilmography',
-    date: '2022-02-07',
-    imgUrl:
-      'https://lv2-cdn.azureedge.net/day6/7e73aa6ac9b9421ba7c4451ae7c7aea1-4a8e327c48614785896e10e18e85d3bc-220107_%EC%9B%90%ED%95%84_%EC%98%A8%EB%9D%BC%EC%9D%B8%EC%BB%A4%EB%B2%84[%EC%B5%9C%EC%A2%85].jpg',
-    link: '/Default/DiscographyView?AamSeq=159&AmSeq=0&PgIndex=0',
-  },
 ];
