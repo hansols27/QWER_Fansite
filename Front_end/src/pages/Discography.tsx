@@ -8,7 +8,7 @@ import btn_next from '@/assets/icons/bg-btn-next.png';
 
 export default function Discography() {
   const [currentPage, setCurrentPage] = useState(1);
-  const itemsPerPage = 6; 
+  const itemsPerPage = 6;
   const totalPages = Math.ceil(albums.length / itemsPerPage);
 
   const startIndex = (currentPage - 1) * itemsPerPage;
@@ -45,7 +45,7 @@ export default function Discography() {
                 <div className="album_img">
                   <img
                     alt={album.title}
-                    src={album.imgUrl}
+                    src={album.image}
                     width={300}
                     height={330}
                   />
