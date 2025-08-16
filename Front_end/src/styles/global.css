@@ -345,7 +345,7 @@ body.active {
 .page-btn-box {
   position: relative;
   text-align: center;
-  margin: 60px 0 0 0;
+  height: 45px;
   background-color: #fff;
   padding: 10px 0;
   border-radius: 10px;
@@ -354,7 +354,6 @@ body.active {
 .page-btn-box.nt_bt {
   position: relative;
   float: right !important;
-  margin: 60px 0 0 0;
 }
 
 .page-btn-box .prev-btn {
@@ -627,7 +626,7 @@ body.active {
   position: fixed;
   width: 380px;
   text-align: center;
-  top: 400px;  
+  top: 400px;
   right: -120px;
   font-family: 'Montserrat';
   font-weight: 700;

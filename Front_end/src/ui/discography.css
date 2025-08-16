@@ -190,16 +190,14 @@
   color: #fff;
 }
 
-/* ===== Discography Grid ===== */
+/* ===== Discography List ===== */
 .cont.discography_view .release_list {
-  display: grid;
-  grid-template-columns: repeat(3, 300px); 
-  grid-auto-rows: 330px; /* 카드 하나 높이 */
-  gap: 20px 50px; /* 행 간격 20px, 열 간격 50px */
-  justify-content: center; /* 가운데 정렬 */
+  display: flex;
+  gap: 0;
+  justify-content: center;
   max-width: 1400px;
-  margin: 40px auto 0;
-  height: 680px; /* 2행 높이 고정 */
+  margin: 80px auto;
+  height: auto;
   box-sizing: border-box;
 }
 
@@ -207,19 +205,18 @@
 .release_list .album_cont {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  width: 300px;
-  height: 330px; /* 카드 높이 고정 */
+  width: 300px; /* 슬라이드 개별 너비 */
+  height: 100%;
   box-sizing: border-box;
+  margin: 0 auto;
 }
 
-/* ===== 이미지 영역: 1:1 비율 (300×300) ===== */
+/* ===== 이미지 영역 ===== */
 .release_list .album_img {
   width: 300px;
-  height: 300px;
+  height: 300px; /* 정사각형 고정 */
   background: #000;
   overflow: hidden;
-  margin-bottom: 15px; /* 이미지와 텍스트 간격 */
   position: relative;
 }
 
@@ -229,6 +226,41 @@
   object-fit: cover;
   display: block;
   transition: transform 0.2s ease-in, filter 0.2s ease-in;
+}
+
+/* 텍스트 영역 */
+.release_list .txt {
+  height: 40px; /* 전체 고정 */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-top: 5px;
+}
+
+.release_list .txt p {
+  margin: 0;
+  font-size: 10pt;
+  font-weight: bold;
+  height: 20px; /* 한 줄 고정 */
+  line-height: 20px; /* 세로 정렬 */
+  overflow: hidden;
+  white-space: nowrap; /* 줄바꿈 방지 */
+  text-overflow: ellipsis; /* ... 처리 */
+  color: #fff;
+  font-family: 'Montserrat';
+}
+
+.release_list .txt span {
+  display: block;
+  font-size: 10pt;
+  height: 15px; /* 한 줄 고정 */
+  line-height: 15px;
+  color: #fff;
+  font-weight: 200;
+  text-align: right;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
 
 /* Hover 오버레이 */
@@ -258,35 +290,6 @@
   opacity: 0.9;
   transform: scale(1.01);
   transition: transform 180ms ease, opacity 180ms ease;
-}
-
-/* 텍스트 영역 */
-.release_list .txt {
-  width: 100%;
-  position: relative;
-}
-
-.release_list .txt p {
-  margin: 0;
-  padding-right: 75px;
-  font-size: 10pt;
-  font-weight: 400;
-  height: 15px; /* 텍스트 영역 높이 */
-  line-height: 15px; /* 세로 가운데 정렬 */
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  color: #fff;
-  font-family: 'Montserrat';
-}
-
-.release_list .txt span {
-  position: absolute;
-  top: 0;
-  right: 0;
-  font-size: 10pt;
-  color: #fff;
-  font-weight: 300;
 }
 
 /* 공통 hover border 효과 */
