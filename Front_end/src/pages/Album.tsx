@@ -42,7 +42,7 @@ export default function Album() {
         <div className="release_list">
           {currentAlbums.map((album, index) => (
             <div className="album_cont" key={index}>
-              <Link to={`/discography/${album.title}`}>
+              <Link to={`/Album/AlbumDetail/${album.title}`}>
                 <div className="album_img">
                   <img alt={album.title} src={album.image} />
                   <div className="list-hover">
