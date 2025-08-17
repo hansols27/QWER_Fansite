@@ -1,12 +1,13 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { albums } from '@/data/albumlist';
-import '@/ui/discography.css';
+import '@/ui/album.css';
 
 import more_view from '@/assets/icons/more_view.png';
 import btn_prev from '@/assets/icons/bg-btn-prev.png';
 import btn_next from '@/assets/icons/bg-btn-next.png';
 
-export default function Discography() {
+export default function Album() {
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 4;
   const totalPages = Math.ceil(albums.length / itemsPerPage);
@@ -41,18 +42,18 @@ export default function Discography() {
         <div className="release_list">
           {currentAlbums.map((album, index) => (
             <div className="album_cont" key={index}>
-              <a href={album.link}>
+              <Link to={`/discography/${album.id}`}>
                 <div className="album_img">
                   <img alt={album.title} src={album.image} />
                   <div className="list-hover">
                     <img alt="자세히보기" src={more_view} />
                   </div>
                 </div>
-                <div className="txt">
-                  <p>{album.title}</p>
-                  <span>{album.date}</span>
-                </div>
-              </a>
+              </Link>
+              <div className="txt">
+                <p>{album.title}</p>
+                <span>{album.date}</span>
+              </div>
             </div>
           ))}
         </div>

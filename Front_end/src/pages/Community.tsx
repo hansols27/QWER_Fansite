@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import "@/ui/community.css";
+import React, { useState } from 'react';
+import '@/ui/community.css';
 import { notice } from '@/data/noticelist';
 
 import btn_prev from '@/assets/icons/bg-btn-prev.png';
@@ -29,50 +29,50 @@ export default function Community() {
       </div>
 
       {/* Main */}
-        <div className="title">NOTICE</div>
-        {/* Notice List */}
-        <div className="noticeList">
-          <ul>
-            {notice.map((notice) => (
-              <li key={notice.id}>
-                <a href={notice.link}>
-                  <p className="cate">{notice.category}</p>
-                  <p className="nc_in">
-                    <span className="tit">{notice.title}</span>
-                    <span className="date">{notice.date}</span>
-                  </p>
-                </a>
-              </li>
-            ))}
-          </ul>
-        </div>
+      <div className="title">COMMUNITY</div>
+      {/* Notice List */}
+      <div className="noticeList">
+        <ul>
+          {notice.map((notice) => (
+            <li key={notice.id}>
+              <a href={notice.link}>
+                <p className="cate">{notice.category}</p>
+                <p className="nc_in">
+                  <span className="tit">{notice.title}</span>
+                  <span className="date">{notice.date}</span>
+                </p>
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
 
-        {/* Pagination */}
-        <div className="page-btn-box nt_bt">
-          <div className="page-btn-box">
-            <button
-              type="button"
-              className="prev-btn"
-              onClick={handlePrev}
-              disabled={page === 1}
-            >
-              <img alt="이전" src={btn_prev} />
+      {/* Pagination */}
+      <div className="page-btn-box nt_bt">
+        <div className="page-btn-box">
+          <button
+            type="button"
+            className="prev-btn"
+            onClick={handlePrev}
+            disabled={page === 1}
+          >
+            <img alt="이전" src={btn_prev} />
             이전
-            </button>
-            <span className="page-number">
-              <strong>{page}</strong> / <em>{totalPages}</em>
-            </span>
-            <button
-              type="button"
-              className="next-btn"
-              onClick={handleNext}
-              disabled={page === totalPages}
-            >
-              <img alt="이후" src={btn_next} />
+          </button>
+          <span className="page-number">
+            <strong>{page}</strong> / <em>{totalPages}</em>
+          </span>
+          <button
+            type="button"
+            className="next-btn"
+            onClick={handleNext}
+            disabled={page === totalPages}
+          >
+            <img alt="이후" src={btn_next} />
             이후
-            </button>
-          </div>
+          </button>
         </div>
       </div>
+    </div>
   );
 }

@@ -1,12 +1,15 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Home from '@/pages/Home';
 import Profile from '@/pages/Profile';
-import Discography from '@/pages/Discography';
+import Album from '@/pages/Album';
+import AlbumDetail from '@/pages/detail/AlbumDetail';
 import Gallery from '@/pages/Gallery';
 import Video from '@/pages/Video';
 import Schedule from '@/pages/Schedule';
-import Notice from '@/pages/Notice';
+import Notice from '@/pages/detail/NoticeDetail';
+import NoticeDetail from '@/pages/Notice';
 import Community from '@/pages/Community';
+import CommuDetail from '@/pages/detail/CommuDetail';
 import Footer from '@/components/layout/Footer';
 import Header from '@/components/layout/Header';
 
@@ -20,12 +23,15 @@ export const Router = () => (
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/Profile" element={<Profile />} />
-          <Route path="/Discography" element={<Discography />} />
+          <Route path="/Album" element={<Album />} />
+          <Route path="/Album/AlbumDetail/:id" element={<AlbumDetail />} />
           <Route path="/Gallery" element={<Gallery />} />
           <Route path="/Video" element={<Video />} />
           <Route path="/Schedule" element={<Schedule />} />
           <Route path="/Notice" element={<Notice />} />
+          <Route path="/Notice/NoticeDetail/:id" element={<NoticeDetail />} />
           <Route path="/Community" element={<Community />} />
+          <Route path="/Community/CommuDetail/:id" element={<CommuDetail />} />
         </Routes>
       </main>
 
