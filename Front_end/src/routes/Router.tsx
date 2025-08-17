@@ -24,7 +24,7 @@ export const Router = () => (
           <Route path="/" element={<Home />} />
           <Route path="/Profile" element={<Profile />} />
           <Route path="/Album" element={<Album />} />
-          <Route path="/Album/AlbumDetail/:id" element={<AlbumDetail />} />
+          <Route path="/Album/AlbumDetail/:title" element={<AlbumDetail />} />
           <Route path="/Gallery" element={<Gallery />} />
           <Route path="/Video" element={<Video />} />
           <Route path="/Schedule" element={<Schedule />} />

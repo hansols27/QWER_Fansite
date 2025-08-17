@@ -30,7 +30,7 @@ const SideNav: React.FC<SideNavProps> = ({ isOpen, onClose }) => {
           </Link>
         </li>
         <li>
-          <Link to="/Discography" onClick={onClose}>
+          <Link to="/Album" onClick={onClose}>
             DISCOGRAPHY
           </Link>
         </li>
