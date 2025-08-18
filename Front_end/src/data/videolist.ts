@@ -1,15 +1,3 @@
-/*export const videoIds = [
-  'pifz9JH1Re8',
-  '8IMPpF2tIWI',
-  '7qRCUAQ_XC8',
-  'AlirzLFEHUI',
-  'JFGRPgYeu38',
-  'ImuWa3SJulY',
-  'WGm2HmXeeRI',
-  'On6Pm4M-dQQ',
-];*/
-
-
 export interface VideoItem {
   id: number;
   title: string;
@@ -19,17 +7,22 @@ export interface VideoItem {
 export const videos: VideoItem[] = [
   {
     id: 1,
-    title: "QWER Video 1",
-    src: "https://www.youtube.com/embed/example1",
+    title: '눈물참기',
+    src: 'https://www.youtube.com/embed/pifz9JH1Re8',
   },
   {
     id: 2,
-    title: "QWER Video 2",
-    src: "https://www.youtube.com/embed/example2",
+    title: '내 이름 맑음',
+    src: 'https://www.youtube.com/embed/AlirzLFEHUI',
   },
   {
     id: 3,
-    title: "QWER Video 3",
-    src: "https://www.youtube.com/embed/example3",
+    title: '고민중독',
+    src: 'https://www.youtube.com/embed/ImuWa3SJulY',
+  },
+  {
+    id: 4,
+    title: '디스코드',
+    src: 'https://www.youtube.com/embed/WGm2HmXeeRI',
   },
 ];
