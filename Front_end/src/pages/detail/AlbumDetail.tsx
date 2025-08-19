@@ -34,9 +34,21 @@ export default function AlbumDetail() {
 
           {/* 발매일 */}
           <div className="dis_bt_bottom">
-            <p>Release Date</p>
             <p className="dis_date">{album.date}</p>
           </div>
+
+          {/* 트랙리스트 */}
+          {album.tracks && (
+            <div className="tracklist">
+              <div className="card-bare-text release-playlist text-tall">
+                {album.tracks.map((track, index) => (
+                  <p key={index}>
+                    {index + 1}. {track}
+                  </p>
+                ))}
+              </div>
+            </div>
+          )}
         </div>
 
         {/* Right */}
@@ -53,26 +65,10 @@ export default function AlbumDetail() {
               </div>
             )}
 
-            {/* 트랙리스트 */}
-            {album.tracks && (
-              <div className="tracklist">
-                <p className="tl_tt">TRACK LIST</p>
-                <div className="card-bare-text release-playlist text-tall">
-                  {album.tracks.map((track, index) => (
-                    <p key={index}>
-                      {index + 1}. {track}
-                    </p>
-                  ))}
-                </div>
-              </div>
-            )}
-
             {/* 유튜브 영상 */}
             {album.videoUrl && (
               <div className="video">
                 <iframe
-                  width="640"
-                  height="360"
                   src={album.videoUrl}
                   title={album.title}
                   frameBorder="0"
