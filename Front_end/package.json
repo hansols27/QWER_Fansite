@@ -1,14 +1,18 @@
 {
   "dependencies": {
     "lts": "^2.0.0",
+    "moment": "^2.30.1",
     "react": "^19.1.0",
+    "react-big-calendar": "^1.11.4",
     "react-dom": "^19.1.0",
     "react-router-dom": "^7.7.0",
     "react-youtube": "^10.1.0",
     "swiper": "^11.2.10"
   },
   "devDependencies": {
+    "@types/moment": "^2.13.0",
     "@types/react": "^19.1.8",
+    "@types/react-big-calendar": "^1.6.5",
     "@types/react-dom": "^19.1.6",
     "@types/react-router-dom": "^5.3.3",
     "@vitejs/plugin-react": "^4.6.0",
