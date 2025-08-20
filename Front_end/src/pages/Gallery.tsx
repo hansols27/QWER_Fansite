@@ -1,17 +1,23 @@
-import React, { useState } from "react";
-import "@/ui/gallery.css";
-import { gallery } from "@/data/gallerylist";
+import React, { useState } from 'react';
+import '@/ui/gallery.css';
+import { gallery } from '@/data/gallerylist';
 
-import btn_prev from "@/assets/icons/bg-btn-prev.png";
-import btn_next from "@/assets/icons/bg-btn-next.png";
+import btn_prev from '@/assets/icons/bg-btn-prev.png';
+import btn_next from '@/assets/icons/bg-btn-next.png';
+import Lightbox from 'react-image-lightbox';
+import 'react-image-lightbox/style.css';
 
 export default function Gallery() {
-  const [currentPage, setCurrentPage] = useState(1);
-  const itemsPerPage = 8;
+  const itemsPerPage = 20;
   const totalPages = Math.ceil(gallery.length / itemsPerPage);
+  const [currentPage, setCurrentPage] = useState(1);
 
   const startIndex = (currentPage - 1) * itemsPerPage;
   const currentImages = gallery.slice(startIndex, startIndex + itemsPerPage);
+
+  // Lightbox 상태
+  const [isOpen, setIsOpen] = useState(false);
+  const [photoIndex, setPhotoIndex] = useState(0);
 
   const goPrev = () => setCurrentPage((p) => Math.max(p - 1, 1));
   const goNext = () => setCurrentPage((p) => Math.min(p + 1, totalPages));
@@ -33,28 +39,25 @@ export default function Gallery() {
 
         {/* 이미지 목록 */}
         <div className="galleryList">
-          <ul className="grid grid-cols-2 md:grid-cols-4 gap-2">
-            {currentImages.map((item) => (
+          <ul>
+            {currentImages.map((item, index) => (
               <li key={item.id}>
-                <a
-                  href={item.href}
-                  data-fancybox="gallery"
-                  target="_blank"
-                  rel="noreferrer"
+                <button
+                  type="button"
+                  onClick={() => {
+                    setPhotoIndex(startIndex + index);
+                    setIsOpen(true);
+                  }}
                 >
-                  <img
-                    src={item.src}
-                    alt={item.alt}
-                    className="w-full h-auto object-cover"
-                  />
-                </a>
+                  <img src={item.src} alt={item.alt} />
+                </button>
               </li>
             ))}
           </ul>
         </div>
 
         {/* Pagination */}
-        <div className="page-btn-box nt_bt">
+        <div className="page-btn-box">
           <button
             type="button"
             className="prev-btn"
@@ -77,6 +80,24 @@ export default function Gallery() {
             이후
           </button>
         </div>
+
+        {/* Lightbox */}
+        {isOpen && (
+          <Lightbox
+            mainSrc={gallery[photoIndex].src}
+            nextSrc={gallery[(photoIndex + 1) % gallery.length].src}
+            prevSrc={
+              gallery[(photoIndex + gallery.length - 1) % gallery.length].src
+            }
+            onCloseRequest={() => setIsOpen(false)}
+            onMovePrevRequest={() =>
+              setPhotoIndex((photoIndex + gallery.length - 1) % gallery.length)
+            }
+            onMoveNextRequest={() =>
+              setPhotoIndex((photoIndex + 1) % gallery.length)
+            }
+          />
+        )}
       </div>
     </div>
   );
