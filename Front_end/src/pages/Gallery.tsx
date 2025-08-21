@@ -1,11 +1,16 @@
-import React, { useState } from 'react';
-import '@/ui/gallery.css';
-import { gallery } from '@/data/gallerylist';
+import React, { useState } from "react";
+import "@/ui/gallery.css";
+import { gallery } from "@/data/gallerylist";
 
-import btn_prev from '@/assets/icons/bg-btn-prev.png';
-import btn_next from '@/assets/icons/bg-btn-next.png';
-import Lightbox from 'react-image-lightbox';
-import 'react-image-lightbox/style.css';
+import btn_prev from "@/assets/icons/bg-btn-prev.png";
+import btn_next from "@/assets/icons/bg-btn-next.png";
+
+// Yet Another React Lightbox
+import Lightbox, { Slide, RenderSlideProps } from "yet-another-react-lightbox";
+import "yet-another-react-lightbox/styles.css";
+
+// Slide 타입 확장 (title 사용 가능)
+type MySlide = Slide & { title?: string };
 
 export default function Gallery() {
   const itemsPerPage = 20;
@@ -21,6 +26,12 @@ export default function Gallery() {
 
   const goPrev = () => setCurrentPage((p) => Math.max(p - 1, 1));
   const goNext = () => setCurrentPage((p) => Math.min(p + 1, totalPages));
+
+  // slides 배열 생성 (MySlide 타입)
+  const slides: MySlide[] = gallery.map((item) => ({
+    src: item.src,
+    title: item.alt,
+  }));
 
   return (
     <div className="container">
@@ -84,18 +95,15 @@ export default function Gallery() {
         {/* Lightbox */}
         {isOpen && (
           <Lightbox
-            mainSrc={gallery[photoIndex].src}
-            nextSrc={gallery[(photoIndex + 1) % gallery.length].src}
-            prevSrc={
-              gallery[(photoIndex + gallery.length - 1) % gallery.length].src
-            }
-            onCloseRequest={() => setIsOpen(false)}
-            onMovePrevRequest={() =>
-              setPhotoIndex((photoIndex + gallery.length - 1) % gallery.length)
-            }
-            onMoveNextRequest={() =>
-              setPhotoIndex((photoIndex + 1) % gallery.length)
-            }
+            open={isOpen}
+            close={() => setIsOpen(false)}
+            slides={slides}
+            index={photoIndex}
+            render={{
+              slide: ({ slide }: RenderSlideProps<MySlide>) => (
+                <img src={slide.src} alt={slide.title ?? ""} />
+              ),
+            }}
           />
         )}
       </div>
