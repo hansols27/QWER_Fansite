@@ -94,18 +94,31 @@ export default function Gallery() {
 
         {/* Lightbox */}
         {isOpen && (
-          <Lightbox
-            open={isOpen}
-            close={() => setIsOpen(false)}
-            slides={slides}
-            index={photoIndex}
-            render={{
-              slide: ({ slide }: RenderSlideProps<MySlide>) => (
-                <img src={slide.src} alt={slide.title ?? ""} />
-              ),
-            }}
-          />
-        )}
+        <Lightbox
+          open={isOpen}
+          close={() => setIsOpen(false)}
+          slides={slides}
+          index={photoIndex}
+          render={{
+            slide: ({ slide }: RenderSlideProps<MySlide>) => (
+              <div style={{
+                width: "100%",
+                height: "100%",
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+                backgroundColor: "#000"
+                }}>
+                <img
+                  src={slide.src}
+                  alt={slide.title ?? ""}
+                  style={{ maxWidth: "100%", maxHeight: "100%", objectFit: "contain" }}
+                />
+             </div>
+            ),
+        }}
+      />
+    )}  
       </div>
     </div>
   );

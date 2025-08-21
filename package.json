@@ -1,6 +1,7 @@
 {
   "devDependencies": {
     "@types/moment": "^2.11.29",
+    "@types/node": "^24.3.0",
     "@types/react-big-calendar": "^1.16.2"
   },
   "dependencies": {
