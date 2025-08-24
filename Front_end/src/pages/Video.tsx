@@ -1,22 +1,32 @@
-import React, { useState, useRef } from "react";
-import "@/ui/video.css";
-import { videos } from "@/data/videolist";
+import React, { useState } from 'react';
+import '@/ui/video.css';
+import { videos } from '@/data/videolist';
+
+import btn_prev from '@/assets/icons/bg-btn-prev.png';
+import btn_next from '@/assets/icons/bg-btn-next.png';
+
+function getYoutubeThumbnail(src: string): string {
+  const match = src.match(/embed\/([^?]+)/);
+  return match ? `https://img.youtube.com/vi/${match[1]}/hqdefault.jpg` : '';
+}
 
 export default function Video() {
-  // iframe 참조를 저장하는 useRef (배열 형태)
-  const iframeRefs = useRef<(HTMLIFrameElement | null)[]>([]);
+  const [selectedIndex, setSelectedIndex] = useState(0);
+  const [thumbPage, setThumbPage] = useState(1);
+  const thumbsPerPage = 3;
 
-  // 동영상 다시 로드 함수
-  const reloadVideos = () => {
-    iframeRefs.current.forEach((iframe) => {
-      if (iframe) {
-        const src = iframe.src;
-        iframe.src = src; // 다시 로드
-      }
-    });
+  const totalThumbPages = Math.ceil(videos.length / thumbsPerPage);
+
+  const startIndex = (thumbPage - 1) * thumbsPerPage;
+  const currentThumbs = videos.slice(startIndex, startIndex + thumbsPerPage);
+
+  const goPrevThumb = () => {
+    if (thumbPage > 1) setThumbPage((prev) => prev - 1);
   };
 
-  const [activeIndex, setActiveIndex] = useState(0);
+  const goNextThumb = () => {
+    if (thumbPage < totalThumbPages) setThumbPage((prev) => prev + 1);
+  };
 
   return (
     <div className="container">
@@ -30,40 +40,37 @@ export default function Video() {
       </div>
 
       {/* Main */}
-        <div className="title">VIDEO</div>
+      <div className="cont video_ct wow fadeInUp" data-wow-delay="0.2s">
+        <div className="title v_tt">VIDEO</div>
 
-      <div className="video-list">
-        {videos.map((video, index) => (
-          <div
-            key={video.id}
-            className={`video-item ${index === activeIndex ? "active" : ""}`}
-            onClick={() => setActiveIndex(index)}
-          >
+        <div className="video_list">
+          {/* 큰 영상 (왼쪽) */}
+          <div className="select_video">
             <iframe
-              ref={(el) => {
-                iframeRefs.current[index] = el;
-              }}
-              width="560"
-              height="315"
-              src={video.src}
-              title={video.title}
+              src={videos[selectedIndex].src}
+              title={videos[selectedIndex].title}
               frameBorder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowFullScreen
             ></iframe>
-            <p>{video.title}</p>
           </div>
-        ))}
-      </div>
 
-      <div className="video-controls">
-        <button onClick={() => setActiveIndex((prev) => (prev - 1 + videos.length) % videos.length)}>
-          이전
-        </button>
-        <button onClick={reloadVideos}>다시 불러오기</button>
-        <button onClick={() => setActiveIndex((prev) => (prev + 1) % videos.length)}>
-          다음
-        </button>
+          {/* 썸네일 목록 (오른쪽, 스크롤 가능) */}
+          <div className="thumb_box">
+            <div className="thumb-list">
+              {videos.map((video, idx) => (
+                <div
+                  key={video.id}
+                  className={`thumb-item ${
+                    selectedIndex === idx ? 'active' : ''
+                  }`}
+                  onClick={() => setSelectedIndex(idx)}
+                >
+                  <img src={getYoutubeThumbnail(video.src)} alt={video.title} />
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   );
